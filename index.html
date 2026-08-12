@@ -4,62 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spot Québécois | La Communauté 100% d'ici</title>
-    <link rel="icon" type="image/webp" href="https://cdn.discordapp.com/icons/1529109338013171713/bce09e151a98c0f77b383faedd7cdcbf.webp?size=1024">
-    <link rel="apple-touch-icon" href="https://cdn.discordapp.com/icons/1529109338013171713/bce09e151a98c0f77b383faedd7cdcbf.webp?size=1024">
-    <meta name="description" content="Spot Québécois est une communauté dédiée aux joueurs et passionnés du Québec. Un environnement structuré, accueillant et professionnel pour jaser, jouer et connecter.">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Spot Québécois">
-    <meta property="og:title" content="Spot Québécois — La Communauté 100% d'ici">
-    <meta property="og:description" content="Tu cherches un endroit où jaser, jouer, découvrir et connecter ? Rejoins le serveur communautaire québécois où ça bouge tous les jours.">
-    <meta property="og:url" content="https://spot-quebecois.github.io/">
-    <meta property="og:locale" content="fr_CA">
-    <meta property="og:image" content="https://media.discordapp.net/attachments/1529112503143891088/1529480994170867823/Design_sans_titre__1_-removebg-preview.png?ex=6a64baad&is=6a63692d&hm=f1da1c0416c33ab8131a9cebe72c6a5ac3d228ba651fb7c47ae7497525b17553&=&format=webp&quality=lossless">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://media.discordapp.net/attachments/1529112503143891088/1529480994170867823/Design_sans_titre__1_-removebg-preview.png?ex=6a64baad&is=6a63692d&hm=f1da1c0416c33ab8131a9cebe72c6a5ac3d228ba651fb7c47ae7497525b17553&=&format=webp&quality=lossless">
-    <meta name="theme-color" content="#5865F2">
+    <link rel="icon" type="image/webp" href="https://cdn.discordapp.com/icons/1529109338013171713/ed4ba1a7238911168293905e106dd335.webp?size=1024">
+    <meta name="description" content="Spot Québécois - Serveur Discord communautaire québécois. Rejoins une communauté active pour jaser, jouer et connecter.">
+    <meta property="og:image" content="https://media.discordapp.net/attachments/1529112503143891088/1529480994170867823/Design_sans_titre__1_-removebg-preview.png">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            --bg-primary: #313338;
-            --bg-secondary: #2b2d31;
-            --bg-tertiary: #1e1f22;
-            --bg-modifier-hover: rgba(79, 84, 92, 0.16);
-            --text-primary: #f2f3f5;
-            --text-secondary: #b5bac1;
-            --text-muted: #949ba4;
-            --brand: #5865F2;
-            --brand-hover: #4752c4;
-            --green: #23a559;
-            --green-hover: #1a8e48;
-            --red: #f23f43;
-            --yellow: #f0b232;
-            --font-main: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            --discord-bg: #313338;
+            --discord-bg-secondary: #2b2d31;
+            --discord-bg-tertiary: #1e1f22;
+            --discord-text: #f2f3f5;
+            --discord-text-muted: #949ba4;
+            --spot-blue: #2563eb;
+            --spot-blue-dark: #1d4ed8;
+            --spot-blue-light: #3b82f6;
+            --spot-accent: #60a5fa;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
         body {
-            font-family: var(--font-main);
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            background: var(--discord-bg);
+            color: var(--discord-text);
             line-height: 1.6;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
 
-        a { text-decoration: none; color: inherit; transition: color 0.2s; }
-        ul { list-style: none; }
+        a { text-decoration: none; color: inherit; }
 
-        /* --- NAVBAR --- */
+        /* NAVBAR */
         .navbar {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
+            width: 100%;
             height: 72px;
-            background-color: var(--bg-tertiary);
+            background: var(--discord-bg-tertiary);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -67,44 +50,102 @@
             z-index: 1000;
             box-shadow: 0 1px 0 rgba(0,0,0,0.2);
         }
-        .nav-left { display: flex; align-items: center; gap: 24px; }
-        .nav-logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.2rem; color: var(--text-primary); }
-        .nav-logo img { width: 40px; height: 40px; border-radius: 50%; }
-        .nav-links { display: flex; gap: 32px; }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--discord-text);
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
         .nav-links a {
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--text-secondary);
+            color: var(--discord-text-muted);
             transition: color 0.2s;
         }
-        .nav-links a:hover { color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px; }
-        .nav-right { display: flex; align-items: center; gap: 16px; }
-        
+
+        .nav-links a:hover {
+            color: var(--discord-text);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             padding: 10px 24px;
             border-radius: 40px;
             font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.2s, transform 0.1s;
+            transition: all 0.2s;
             border: none;
         }
-        .btn-brand { background-color: var(--brand); color: white; }
-        .btn-brand:hover { background-color: var(--brand-hover); }
-        .btn-white { background-color: white; color: var(--bg-tertiary); }
-        .btn-white:hover { color: var(--brand); }
-        .btn-large { padding: 16px 32px; font-size: 1.1rem; border-radius: 28px; }
-        .btn:active { transform: scale(0.96); }
 
-        .hamburger { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+        .btn-primary {
+            background: var(--spot-blue);
+            color: white;
+        }
 
-        /* --- HERO --- */
+        .btn-primary:hover {
+            background: var(--spot-blue-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--discord-bg-tertiary);
+        }
+
+        .btn-white:hover {
+            color: var(--spot-blue);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            border-radius: 28px;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--discord-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
         .hero {
-            background-color: var(--bg-primary);
-            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='p' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='2' cy='2' r='1' fill='%235865f2' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23p)'/%3E%3C/svg%3E");
+            background: var(--discord-bg);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -114,164 +155,235 @@
             padding: 120px 20px 80px;
             position: relative;
         }
+
         .hero h1 {
             font-size: 4rem;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 24px;
             max-width: 900px;
+            background: linear-gradient(135deg, #fff 0%, var(--spot-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
         .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
+            font-size: 1.25rem;
+            color: var(--discord-text-muted);
             max-width: 700px;
             margin-bottom: 40px;
             line-height: 1.7;
         }
-        .hero-buttons { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+
+        .hero-buttons {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .hero-image {
             margin-top: 60px;
             max-width: 1000px;
             width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border-radius: 24px;
             overflow: hidden;
-            background: var(--bg-secondary);
-            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.3);
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        .hero-image img { width: 100%; height: auto; display: block; }
 
-        /* --- SECTIONS --- */
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* SECTIONS */
         .section {
             padding: 100px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .section-bg-secondary { background-color: var(--bg-secondary); }
-        .section-bg-primary { background-color: var(--bg-primary); }
-        
+
+        .section-secondary {
+            background: var(--discord-bg-secondary);
+        }
+
         .container {
             max-width: 1200px;
             width: 100%;
-            margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 60px;
+            gap: 80px;
         }
-        .container.reverse { flex-direction: row-reverse; }
-        
-        .section-content { flex: 1; }
+
+        .container.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .section-content {
+            flex: 1;
+        }
+
         .section-content h2 {
             font-size: 3rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 24px;
+            color: var(--discord-text);
         }
+
         .section-content p {
             font-size: 1.1rem;
-            color: var(--text-secondary);
+            color: var(--discord-text-muted);
             line-height: 1.7;
             margin-bottom: 24px;
         }
+
         .section-image {
             flex: 1;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
+
         .section-image img {
             max-width: 100%;
             border-radius: 16px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
-        /* --- FEATURES GRID --- */
+        /* FEATURES */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 32px;
             margin-top: 40px;
         }
+
         .feature-card {
-            background: var(--bg-tertiary);
+            background: var(--discord-bg-tertiary);
             padding: 32px;
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.2s, background 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .feature-card:hover { transform: translateY(-4px); background: rgba(79, 84, 92, 0.3); }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+        }
+
         .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--brand);
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--spot-blue), var(--spot-blue-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             color: white;
             margin-bottom: 20px;
         }
-        .feature-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
-        .feature-card p { font-size: 1rem; color: var(--text-secondary); margin: 0; }
 
-        /* --- RULES & SANCTIONS --- */
-        .rules-list {
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--discord-text-muted);
+            margin: 0;
+        }
+
+        /* RULES */
+        .rules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 24px;
             margin-top: 40px;
         }
-        .rule-item {
+
+        .rule-card {
+            background: var(--discord-bg-tertiary);
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--spot-blue);
             display: flex;
             gap: 16px;
-            padding: 24px;
-            background: var(--bg-primary);
-            border-radius: 12px;
-            border-left: 4px solid var(--brand);
         }
-        .rule-num {
+
+        .rule-number {
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--brand);
-            min-width: 30px;
+            color: var(--spot-blue);
+            min-width: 32px;
         }
-        .rule-text h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-        .rule-text p { font-size: 0.95rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
 
+        .rule-content h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .rule-content p {
+            font-size: 0.95rem;
+            color: var(--discord-text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* SANCTIONS */
         .sanctions-box {
-            background: var(--bg-tertiary);
+            background: var(--discord-bg-tertiary);
             border-radius: 16px;
             padding: 40px;
             margin-top: 60px;
             border: 1px solid rgba(255,255,255,0.05);
         }
-        .sanctions-box h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 24px; text-align: center; }
-        .sanction-step {
+
+        .sanctions-box h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .sanction-item {
             display: flex;
             align-items: center;
             gap: 20px;
             padding: 16px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .sanction-step:last-child { border-bottom: none; }
-        .step-badge {
+
+        .sanction-item:last-child {
+            border-bottom: none;
+        }
+
+        .sanction-badge {
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
-            min-width: 140px;
+            min-width: 150px;
             text-align: center;
         }
-        .step-1 { background: rgba(35, 165, 89, 0.2); color: var(--green); }
-        .step-2 { background: rgba(35, 165, 89, 0.2); color: var(--green); }
-        .step-3 { background: rgba(240, 178, 50, 0.2); color: var(--yellow); }
-        .step-4 { background: rgba(242, 63, 67, 0.2); color: var(--red); }
-        .step-5 { background: rgba(242, 63, 67, 0.3); color: var(--red); font-weight: 800; }
-        .step-desc { color: var(--text-secondary); font-size: 0.95rem; }
 
-        /* --- STATUS BANNER --- */
+        .badge-1, .badge-2 { background: rgba(35, 165, 89, 0.2); color: #23a559; }
+        .badge-3 { background: rgba(240, 178, 50, 0.2); color: #f0b232; }
+        .badge-4, .badge-5 { background: rgba(242, 63, 67, 0.2); color: #f23f43; }
+
+        .sanction-desc {
+            color: var(--discord-text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* STATUS BANNER */
         .status-banner {
             background: rgba(242, 63, 67, 0.1);
             border: 1px solid rgba(242, 63, 67, 0.3);
@@ -280,29 +392,48 @@
             text-align: center;
             margin-top: 60px;
         }
-        .status-banner h3 { color: var(--red); font-size: 1.5rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .status-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 24px;
-        }
-        .status-item {
-            background: var(--bg-tertiary);
-            padding: 16px;
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--text-secondary);
+
+        .status-banner h3 {
+            color: #f23f43;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
         }
-        .status-item i { color: var(--red); }
 
-        /* --- TEAM --- */
+        .status-banner p {
+            color: var(--discord-text-muted);
+            margin-bottom: 24px;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .status-item {
+            background: var(--discord-bg-tertiary);
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--discord-text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .status-item i {
+            color: #f23f43;
+        }
+
+        /* TEAM */
         .team-card {
-            background: var(--bg-tertiary);
+            background: var(--discord-bg-tertiary);
             border-radius: 16px;
             padding: 40px;
             text-align: center;
@@ -310,43 +441,72 @@
             margin: 0 auto;
             border: 1px solid rgba(255,255,255,0.05);
         }
+
         .team-avatar {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            border: 4px solid var(--brand);
+            border: 4px solid var(--spot-blue);
             margin-bottom: 20px;
             object-fit: cover;
         }
-        .team-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
-        .team-role { 
-            display: inline-block; 
-            background: var(--brand); 
-            color: white; 
-            padding: 4px 12px; 
-            border-radius: 12px; 
-            font-size: 0.85rem; 
-            font-weight: 700; 
-            margin-bottom: 16px; 
-        }
-        .team-desc { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
-        .team-tag { margin-top: 16px; color: var(--text-muted); font-family: monospace; font-size: 0.9rem; }
 
-        /* --- CTA --- */
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .team-role {
+            display: inline-block;
+            background: var(--spot-blue);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .team-desc {
+            color: var(--discord-text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .team-tag {
+            color: var(--discord-text-muted);
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        /* CTA */
         .cta-section {
-            background-color: var(--bg-tertiary);
+            background: var(--discord-bg-tertiary);
             padding: 100px 20px;
             text-align: center;
         }
-        .cta-section h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 24px; }
-        .cta-section p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; }
 
-        /* --- FOOTER --- */
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+
+        .cta-section p {
+            color: var(--discord-text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* FOOTER */
         .footer {
-            background-color: var(--bg-tertiary);
+            background: var(--discord-bg-tertiary);
             padding: 60px 20px 40px;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
+
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -354,27 +514,58 @@
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
         }
-        .footer-brand { display: flex; flex-direction: column; gap: 16px; }
-        .footer-logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.2rem; }
-        .footer-logo img { width: 32px; height: 32px; border-radius: 50%; }
-        .footer-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; max-width: 300px; }
-        .footer-col h4 {
-            color: var(--brand);
-            font-size: 1rem;
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-weight: 800;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .footer-desc {
+            color: var(--discord-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: var(--spot-blue);
+            font-size: 0.85rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-bottom: 20px;
         }
-        .footer-col ul li { margin-bottom: 12px; }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
         .footer-col ul li a {
-            color: var(--text-muted);
+            color: var(--discord-text-muted);
             font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.2s;
         }
-        .footer-col ul li a:hover { color: var(--text-primary); text-decoration: underline; }
-        
+
+        .footer-col ul li a:hover {
+            color: var(--discord-text);
+        }
+
         .footer-bottom {
             max-width: 1200px;
             margin: 40px auto 0;
@@ -386,47 +577,71 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-        .footer-copyright { color: var(--text-muted); font-size: 0.85rem; }
+
+        .footer-copyright {
+            color: var(--discord-text-muted);
+            font-size: 0.85rem;
+        }
+
         .footer-dev {
             display: flex;
             align-items: center;
             gap: 12px;
-            background: var(--bg-secondary);
+            background: var(--discord-bg-secondary);
             padding: 8px 16px;
             border-radius: 24px;
             border: 1px solid rgba(255,255,255,0.05);
         }
-        .footer-dev img { width: 32px; height: 32px; border-radius: 50%; }
-        .footer-dev-info { display: flex; flex-direction: column; }
-        .footer-dev-name { font-size: 0.85rem; font-weight: 700; color: var(--text-primary); }
-        .footer-dev-role { font-size: 0.75rem; color: var(--text-muted); }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 900px) {
-            .nav-links, .nav-right .btn { display: none; }
-            .hamburger { display: block; }
-            .hero h1 { font-size: 2.5rem; }
-            .container { flex-direction: column !important; text-align: center; gap: 40px; }
-            .section-content h2 { font-size: 2.2rem; }
-            .footer-container { grid-template-columns: 1fr 1fr; }
-            .rules-list { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 600px) {
-            .footer-container { grid-template-columns: 1fr; }
-            .hero-buttons { flex-direction: column; width: 100%; }
-            .hero-buttons .btn { width: 100%; }
-            .status-grid { grid-template-columns: 1fr; }
+        .footer-dev img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
         }
 
-        /* --- ANIMATIONS --- */
+        .footer-dev-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-dev-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .footer-dev-role {
+            font-size: 0.75rem;
+            color: var(--discord-text-muted);
+        }
+
+        /* ANIMATIONS */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .nav-links, .nav-right .btn { display: none; }
+            .mobile-menu { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+            .container { flex-direction: column !important; gap: 40px; text-align: center; }
+            .section-content h2 { font-size: 2.2rem; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .footer-container { grid-template-columns: 1fr; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .hero-buttons .btn { width: 100%; }
+            .rules-grid { grid-template-columns: 1fr; }
+            .status-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -435,42 +650,40 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-left">
-            <a href="#" class="nav-logo">
-                <img src="https://cdn.discordapp.com/icons/1529109338013171713/bce09e151a98c0f77b383faedd7cdcbf.webp?size=1024" alt="Logo">
+            <a href="#" class="logo">
+                <img src="https://cdn.discordapp.com/icons/1529109338013171713/ed4ba1a7238911168293905e106dd335.webp?size=1024" alt="Spot Québécois">
                 Spot Québécois
             </a>
             <div class="nav-links">
-                <a href="#apropos">Fonctionnalités</a>
+                <a href="#fonctionnalites">Fonctionnalités</a>
                 <a href="#reglements">Règlements</a>
                 <a href="#equipe">Équipe</a>
                 <a href="#faq">FAQ</a>
             </div>
         </div>
         <div class="nav-right">
-            <a href="https://discord.gg/b5ZunqKzbv" target="_blank" class="btn btn-brand">Ouvrir Spot Québécois</a>
-            <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">
-                <i class="fas fa-bars"></i>
-            </button>
+            <a href="https://discord.gg/b5ZunqKzbv" target="_blank" class="btn btn-primary">Ouvrir Spot Québécois</a>
+            <button class="mobile-menu"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
     <!-- HERO -->
     <section class="hero">
         <h1 class="fade-in">Imaginez un endroit où<br>jaser, jouer et connecter.</h1>
-        <p class="fade-in">Spot Québécois, c'est le serveur communautaire québécois où ça bouge tous les jours. Une communauté active, respectueuse et fière de représenter le Québec, peu importe ta région.</p>
+        <p class="fade-in">Spot Québécois, c'est le serveur communautaire québécois où ça bouge tous les jours. Une communauté active, respectueuse et fière de représenter le Québec.</p>
         <div class="hero-buttons fade-in">
-            <a href="https://discord.gg/b5ZunqKzbv" target="_blank" class="btn btn-brand btn-large">
+            <a href="https://discord.gg/b5ZunqKzbv" target="_blank" class="btn btn-primary btn-large">
                 <i class="fab fa-discord" style="margin-right: 8px;"></i> Rejoindre le serveur
             </a>
-            <a href="#apropos" class="btn btn-white btn-large">Découvrir plus</a>
+            <a href="#fonctionnalites" class="btn btn-white btn-large">Découvrir plus</a>
         </div>
         <div class="hero-image fade-in">
-            <img src="https://media.discordapp.net/attachments/1529112503143891088/1529480994170867823/Design_sans_titre__1_-removebg-preview.png?ex=6a64baad&is=6a63692d&hm=f1da1c0416c33ab8131a9cebe72c6a5ac3d228ba651fb7c47ae7497525b17553&=&format=webp&quality=lossless" alt="Spot Québécois Banner">
+            <img src="https://media.discordapp.net/attachments/1529112503143891088/1529480994170867823/Design_sans_titre__1_-removebg-preview.png" alt="Spot Québécois">
         </div>
     </section>
 
-    <!-- SECTION 1: FONCTIONNALITÉS -->
-    <section class="section section-bg-secondary" id="apropos">
+    <!-- FEATURES -->
+    <section class="section" id="fonctionnalites">
         <div class="container">
             <div class="section-content fade-in">
                 <h2>Créez un endroit qui vous ressemble.</h2>
@@ -501,44 +714,89 @@
         </div>
     </section>
 
-    <!-- SECTION 2: RÈGLEMENTS & SÉCURITÉ -->
-    <section class="section section-bg-primary" id="reglements">
+    <!-- RULES -->
+    <section class="section section-secondary" id="reglements">
         <div class="container reverse">
             <div class="section-content fade-in">
                 <h2>Fiable, sécurisé et<br>transparent.</h2>
                 <p>Pour garantir un environnement sain, nous avons mis en place des règles claires et un système de sanctions progressif. La sécurité des membres est notre priorité absolue.</p>
                 
+                <div class="rules-grid">
+                    <div class="rule-card">
+                        <div class="rule-number">01</div>
+                        <div class="rule-content">
+                            <h4>Respect Absolu</h4>
+                            <p>Aucune provocation, intimidation ou attitude toxique ne sera tolérée.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-number">02</div>
+                        <div class="rule-content">
+                            <h4>Profil Approprié</h4>
+                            <p>Pseudos et images de profil doivent rester appropriés.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-number">03</div>
+                        <div class="rule-content">
+                            <h4>Publicité Interdite</h4>
+                            <p>Sans autorisation préalable du STAFF. Liens suspects = ban.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-number">04</div>
+                        <div class="rule-content">
+                            <h4>Respect du STAFF</h4>
+                            <p>Les décisions du STAFF ne sont pas sujettes à débat public.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-number">05</div>
+                        <div class="rule-content">
+                            <h4>Confidentialité</h4>
+                            <p>Ne partagez jamais d'informations personnelles.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-number">06</div>
+                        <div class="rule-content">
+                            <h4>Langage Approprié</h4>
+                            <p>Aucun propos haineux, discriminatoire ou vulgaire.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="sanctions-box">
-                    <h3><i class="fas fa-gavel" style="color: var(--brand); margin-right: 10px;"></i>Échelle des Sanctions</h3>
-                    <div class="sanction-step">
-                        <span class="step-badge step-1">Avertissement #1</span>
-                        <span class="step-desc">Rappel simple. Aucune sanction appliquée.</span>
+                    <h3><i class="fas fa-gavel" style="color: var(--spot-blue); margin-right: 10px;"></i>Échelle des Sanctions</h3>
+                    <div class="sanction-item">
+                        <span class="sanction-badge badge-1">Avertissement #1</span>
+                        <span class="sanction-desc">Rappel simple. Aucune sanction appliquée.</span>
                     </div>
-                    <div class="sanction-step">
-                        <span class="step-badge step-2">Avertissement #2</span>
-                        <span class="step-desc">Surveillance accrue de ton comportement.</span>
+                    <div class="sanction-item">
+                        <span class="sanction-badge badge-2">Avertissement #2</span>
+                        <span class="sanction-desc">Surveillance accrue de ton comportement.</span>
                     </div>
-                    <div class="sanction-step">
-                        <span class="step-badge step-3">Avertissement #3</span>
-                        <span class="step-desc">Exclusion temporaire de 24 heures.</span>
+                    <div class="sanction-item">
+                        <span class="sanction-badge badge-3">Avertissement #3</span>
+                        <span class="sanction-desc">Exclusion temporaire de 24 heures.</span>
                     </div>
-                    <div class="sanction-step">
-                        <span class="step-badge step-4">Avertissement #4</span>
-                        <span class="step-desc">Exclusion d'une semaine. Dernière chance.</span>
+                    <div class="sanction-item">
+                        <span class="sanction-badge badge-4">Avertissement #4</span>
+                        <span class="sanction-desc">Exclusion d'une semaine. Dernière chance.</span>
                     </div>
-                    <div class="sanction-step">
-                        <span class="step-badge step-5">Avertissement #5</span>
-                        <span class="step-desc">Bannissement permanent et blacklist automatique.</span>
+                    <div class="sanction-item">
+                        <span class="sanction-badge badge-5">Avertissement #5</span>
+                        <span class="sanction-desc">Bannissement permanent et blacklist.</span>
                     </div>
                 </div>
 
                 <div class="status-banner">
                     <h3><i class="fas fa-lock"></i> Statut des Candidatures</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem;">Merci de ne pas solliciter les tickets d'administration concernant l'ouverture des candidatures.</p>
+                    <p>Merci de ne pas solliciter les tickets d'administration concernant l'ouverture des candidatures.</p>
                     <div class="status-grid">
                         <div class="status-item"><i class="fas fa-circle-xmark"></i> STAFF</div>
                         <div class="status-item"><i class="fas fa-circle-xmark"></i> Développeur(euse)</div>
-                        <div class="status-item"><i class="fas fa-circle-xmark"></i> Créateur(trice) Contenu</div>
+                        <div class="status-item"><i class="fas fa-circle-xmark"></i> Créateur(trice)</div>
                         <div class="status-item"><i class="fas fa-circle-xmark"></i> Organisateur(trice)</div>
                     </div>
                 </div>
@@ -546,8 +804,8 @@
         </div>
     </section>
 
-    <!-- SECTION 3: ÉQUIPE -->
-    <section class="section section-bg-secondary" id="equipe">
+    <!-- TEAM -->
+    <section class="section" id="equipe">
         <div class="container">
             <div class="section-content fade-in" style="text-align: center; width: 100%;">
                 <h2>Rencontrez l'équipe</h2>
@@ -557,19 +815,44 @@
                     <img src="https://cdn.discordapp.com/avatars/1317270253809700884/7896ba0de6a044e37b74c58dbe6a9667.webp?size=1024" alt="O. Beaulieu" class="team-avatar">
                     <div class="team-name">O. Beaulieu</div>
                     <span class="team-role">Propriétaire & Fondateur</span>
-                    <p class="team-desc">Créateur et administrateur de Spot Québécois. Passionné par la création de communautés chaleureuses et l'organisation d'événements pour rassembler les Québécois dans un environnement convivial et respectueux.</p>
+                    <p class="team-desc">Créateur et administrateur de Spot Québécois. Passionné par la création de communautés chaleureuses et l'organisation d'événements.</p>
                     <div class="team-tag"><i class="fab fa-discord"></i> @o_beaulieu</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="cta-section" id="rejoindre">
+    <!-- FAQ -->
+    <section class="section section-secondary" id="faq">
+        <div class="container reverse">
+            <div class="section-content fade-in">
+                <h2>Questions fréquentes</h2>
+                <p>Un guide simple et clair pour aider les membres à mieux comprendre le fonctionnement du serveur.</p>
+                
+                <div style="margin-top: 40px;">
+                    <div style="background: var(--discord-bg-tertiary); padding: 24px; border-radius: 12px; margin-bottom: 16px;">
+                        <h4 style="font-weight: 700; margin-bottom: 8px; color: var(--spot-blue-light);">Comment Devenir STAFF ?</h4>
+                        <p style="color: var(--discord-text-muted); font-size: 0.95rem; margin: 0;">Tu dois être actif, respectueux et impliqué. Quand les recrutements ouvrent, un formulaire apparaît dans 📣・annonces.</p>
+                    </div>
+                    <div style="background: var(--discord-bg-tertiary); padding: 24px; border-radius: 12px; margin-bottom: 16px;">
+                        <h4 style="font-weight: 700; margin-bottom: 8px; color: var(--spot-blue-light);">Comment Organiser Un Événement ?</h4>
+                        <p style="color: var(--discord-text-muted); font-size: 0.95rem; margin: 0;">Propose ton idée dans 📱・suggestions. Si accepté, on t'aide à choisir la date et préparer l'annonce.</p>
+                    </div>
+                    <div style="background: var(--discord-bg-tertiary); padding: 24px; border-radius: 12px; margin-bottom: 16px;">
+                        <h4 style="font-weight: 700; margin-bottom: 8px; color: var(--spot-blue-light);">Comment Signaler Un Problème ?</h4>
+                        <p style="color: var(--discord-text-muted); font-size: 0.95rem; margin: 0;">Ouvre un ticket dans ⛔・tickets. Explique ce qui s'est passé et ajoute des preuves si tu en as.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
         <div class="fade-in">
             <h2>Prêt à rejoindre l'aventure ?</h2>
             <p>Une vibe locale, une communauté accueillante, un serveur qui évolue avec ses membres. Un endroit où chaque interaction compte.</p>
-            <a href="https://discord.gg/b5ZunqKzbv" target="_blank" class="btn btn-brand btn-large">
+            <a href="https://discord.gg/b5ZunqKzbv" target="_blank" class="btn btn-primary btn-large">
                 <i class="fab fa-discord" style="margin-right: 8px;"></i> Rejoindre Spot Québécois
             </a>
         </div>
@@ -580,11 +863,11 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="https://cdn.discordapp.com/icons/1529109338013171713/bce09e151a98c0f77b383faedd7cdcbf.webp?size=1024" alt="Logo">
+                    <img src="https://cdn.discordapp.com/icons/1529109338013171713/ed4ba1a7238911168293905e106dd335.webp?size=1024" alt="Spot Québécois">
                     Spot Québécois
                 </div>
                 <p class="footer-desc">Une communauté dédiée aux joueurs et passionnés du Québec qui recherchent un environnement structuré, accueillant et professionnel.</p>
-                <a href="https://discord.gg/b5ZunqKzbv" target="_blank" class="btn btn-brand" style="width: fit-content; margin-top: 10px;">
+                <a href="https://discord.gg/b5ZunqKzbv" target="_blank" class="btn btn-primary" style="width: fit-content; margin-top: 10px;">
                     <i class="fab fa-discord"></i> &nbsp;Nous rejoindre
                 </a>
             </div>
@@ -592,7 +875,7 @@
             <div class="footer-col">
                 <h4>Navigation</h4>
                 <ul>
-                    <li><a href="#apropos">Fonctionnalités</a></li>
+                    <li><a href="#fonctionnalites">Fonctionnalités</a></li>
                     <li><a href="#reglements">Règlements</a></li>
                     <li><a href="#equipe">Équipe</a></li>
                     <li><a href="#faq">FAQ</a></li>
@@ -605,24 +888,22 @@
                     <li><a href="https://discord.com/channels/1529109338013171713/1529112503143891088" target="_blank">Règlements</a></li>
                     <li><a href="https://discord.com/channels/1529109338013171713/1529113381527748669" target="_blank">Annonces</a></li>
                     <li><a href="https://discord.com/channels/1529109338013171713/1529657534007476296" target="_blank">Candidatures</a></li>
-                    <li><a href="https://discord.com/channels/1529109338013171713/1529487343382302790" target="_blank">Ouvrir un Ticket</a></li>
+                    <li><a href="https://discord.com/channels/1529109338013171713/1529487343382302790" target="_blank">Tickets</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Légal & Support</h4>
+                <h4>Légal</h4>
                 <ul>
-                    <li><a href="#">Conditions d'utilisation</a></li>
-                    <li><a href="#">Politique de confidentialité</a></li>
-                    <li><a href="https://discord.gg/b5ZunqKzbv" target="_blank">Support Discord</a></li>
+                    <li><a href="#">Conditions</a></li>
+                    <li><a href="#">Confidentialité</a></li>
+                    <li><a href="https://discord.gg/b5ZunqKzbv" target="_blank">Support</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <div class="footer-copyright">
-                &copy; 2026 Spot Québécois. Tous droits réservés.
-            </div>
+            <div class="footer-copyright">© 2026 Spot Québécois. Tous droits réservés.</div>
             <div class="footer-dev">
                 <img src="https://cdn.discordapp.com/avatars/1281784488854159421/608fbe0e316e417b5e83539ef8555255.webp?size=1024" alt="Jacobin Babouain">
                 <div class="footer-dev-info">
@@ -634,24 +915,16 @@
     </footer>
 
     <script>
-        // Animation au scroll simple et légère
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
+        // Scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
