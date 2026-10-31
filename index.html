@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spot Québécois 🎃 | La Communauté 100% d'ici</title>
+    <title>Spot Québécois | La Communauté 100% d'ici</title>
     <link rel="icon" type="image/webp" href="https://cdn.discordapp.com/icons/1529109338013171713/ed4ba1a7238911168293905e106dd335.webp?size=1024">
     <link rel="apple-touch-icon" href="https://cdn.discordapp.com/icons/1529109338013171713/ed4ba1a7238911168293905e106dd335.webp?size=1024">
     <meta name="description" content="Spot Québécois est une communauté dédiée aux joueurs et passionnés du Québec. Jaser, jouer, connecter : rejoins la communauté 100% d'ici ! Édition spéciale Halloween.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Spot Québécois">
-    <meta property="og:title" content="Spot Québécois 🎃 — La Communauté 100% d'ici">
+    <meta property="og:title" content="Spot Québécois — La Communauté 100% d'ici">
     <meta property="og:description" content="Tu cherches un endroit où jaser, jouer, découvrir et connecter ? Rejoins le serveur communautaire québécois où ça bouge tous les jours. Édition spéciale Halloween !">
     <meta property="og:url" content="https://jacobin904.github.io/Spot-Quebecois/">
     <meta property="og:locale" content="fr_CA">
@@ -89,7 +89,7 @@
         .moon::before{width:34px;height:34px;top:38%;left:22%}
         .moon::after{width:22px;height:22px;top:60%;left:55%}
         @keyframes moonGlow{50%{box-shadow:0 0 80px 30px rgba(255,207,135,.45),0 0 170px 70px rgba(255,117,24,.22)}}
-        .bat{position:absolute;z-index:1;opacity:.85;animation:fly linear infinite;pointer-events:none;filter:drop-shadow(0 0 8px rgba(139,92,246,.4))}
+        .bat-svg{position:absolute;z-index:1;opacity:.85;animation:fly linear infinite;pointer-events:none;filter:drop-shadow(0 0 8px rgba(139,92,246,.4))}
         @keyframes fly{0%{transform:translateX(-12vw) translateY(0) rotate(8deg)}25%{transform:translateX(18vw) translateY(-45px) rotate(-8deg)}50%{transform:translateX(46vw) translateY(12px) rotate(8deg)}75%{transform:translateX(74vw) translateY(-35px) rotate(-5deg)}100%{transform:translateX(112vw) translateY(0) rotate(8deg)}}
         .fog{position:absolute;left:-10%;right:-10%;bottom:0;height:240px;pointer-events:none;z-index:2}
         .fog.f1{background:radial-gradient(ellipse at 30% 100%,rgba(139,92,246,.16),transparent 60%),radial-gradient(ellipse at 75% 100%,rgba(255,117,24,.10),transparent 55%);filter:blur(6px);animation:fogMove 26s ease-in-out infinite alternate}
@@ -98,6 +98,7 @@
         .skyline{position:absolute;bottom:-2px;left:0;width:100%;height:190px;z-index:1;opacity:.95}
         .hero-content{max-width:1100px;z-index:3;position:relative}
         .hero-badge{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(255,117,24,.45),rgba(139,92,246,.2));backdrop-filter:blur(15px);padding:15px 35px;border-radius:50px;font-size:.95rem;font-weight:700;margin-bottom:35px;border:1px solid rgba(255,117,24,.4);color:var(--orange-doux);letter-spacing:2px;text-transform:uppercase;animation:slideDown 1s ease;box-shadow:0 10px 30px rgba(255,117,24,.3)}
+        .hero-badge i{font-size:1.1rem;filter:drop-shadow(0 0 6px rgba(255,117,24,.6))}
         @keyframes slideDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
         .hero h2{font-size:6.5rem;margin-bottom:25px;font-weight:400;font-family:'Creepster',cursive;letter-spacing:6px;line-height:1.15;display:flex;flex-wrap:wrap;justify-content:center;gap:0 .28em;filter:drop-shadow(0 0 30px rgba(255,117,24,.35))}
         .hero h2 .word{display:inline-flex;overflow:hidden;padding:.08em 0}
@@ -120,14 +121,14 @@
         .marquee{background:linear-gradient(90deg,var(--nuit-2),#3b1a08,var(--nuit-2));padding:22px 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:5}
         .marquee-track{display:flex;gap:60px;white-space:nowrap;animation:marqScroll 25s linear infinite;width:max-content}
         .marquee-item{font-family:'Creepster',cursive;font-size:1.9rem;font-weight:400;letter-spacing:4px;color:var(--blanc);display:flex;align-items:center;gap:60px}
-        .marquee-item .sep{font-size:1.6rem;animation:flicker 3s infinite}
-        @keyframes flicker{0%,100%{opacity:1;text-shadow:0 0 18px rgba(255,117,24,.8)}45%{opacity:.75;text-shadow:0 0 6px rgba(255,117,24,.4)}55%{opacity:1}62%{opacity:.8}}
+        .marquee-item .sep{font-size:1.3rem;color:var(--primary);animation:flicker 3s infinite}
+        @keyframes flicker{0%,100%{opacity:1;filter:drop-shadow(0 0 12px rgba(255,117,24,.8))}45%{opacity:.75;filter:drop-shadow(0 0 4px rgba(255,117,24,.4))}55%{opacity:1}62%{opacity:.8}}
         @keyframes marqScroll{to{transform:translateX(-50%)}}
         section{padding:120px 0;position:relative}
-        .web{position:absolute;font-size:120px;opacity:.07;pointer-events:none;filter:grayscale(1) brightness(3);z-index:0}
-        .web.tl{top:80px;left:-15px}
-        .web.tr{top:80px;right:-15px;transform:scaleX(-1)}
-        .kicker{font-family:'Creepster',cursive;font-size:1.25rem;letter-spacing:4px;color:var(--primary);display:block;margin-bottom:14px;text-shadow:0 0 20px rgba(255,117,24,.5);animation:flicker 4s infinite}
+        .web-corner{position:absolute;font-size:120px;opacity:.08;pointer-events:none;filter:grayscale(1) brightness(3);z-index:0;color:var(--blanc)}
+        .web-corner.tl{top:80px;left:-15px}
+        .web-corner.tr{top:80px;right:-15px;transform:scaleX(-1)}
+        .kicker{font-family:'Creepster',cursive;font-size:1.25rem;letter-spacing:4px;color:var(--primary);display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:14px;filter:drop-shadow(0 0 15px rgba(255,117,24,.5));animation:flicker 4s infinite}
         .section-header{text-align:center;margin-bottom:80px;position:relative;z-index:1}
         .section-header h2{font-size:3.4rem;background:var(--grad-os);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:25px;font-weight:900;font-family:'Playfair Display',serif;display:inline-block;position:relative;animation:gradShift 4s ease infinite}
         .section-header h2::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:100px;height:4px;background:var(--grad-sort);border-radius:2px;animation:expandW 2s ease infinite}
@@ -151,25 +152,30 @@
         .status-item i{color:var(--danger)}
         /* ===== SOUTIEN ===== */
         .resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;position:relative;z-index:1}
-        .resource-card{background:rgba(29,17,48,.65);border:1px solid var(--border);border-radius:20px;padding:32px;transition:all .4s;position:relative;overflow:hidden}
-        .resource-card::after{content:'💜';position:absolute;top:18px;right:22px;font-size:1.2rem;opacity:.5}
+        .resource-card{background:rgba(29,17,48,.65);border:1px solid var(--border);border-radius:20px;padding:32px;transition:all .4s;position:relative;overflow:hidden;text-decoration:none;display:block}
+        .resource-card::after{content:'\f004';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:18px;right:22px;font-size:1rem;opacity:.5;color:var(--violet)}
         .resource-card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.5);box-shadow:0 25px 60px rgba(0,0,0,.5),0 0 35px rgba(139,92,246,.15)}
+        .resource-card:hover::after{opacity:1}
         .resource-card h4{color:var(--blanc);font-size:1.25rem;margin-bottom:12px;display:flex;align-items:center;gap:12px}
         .resource-card h4 i{color:var(--violet)}
         .resource-card p{color:var(--gris);font-size:.98rem;line-height:1.8}
+        .resource-card .link-indicator{display:inline-flex;align-items:center;gap:6px;color:var(--primary-light);font-size:.85rem;margin-top:12px;font-weight:600;opacity:.8;transition:opacity .3s}
+        .resource-card:hover .link-indicator{opacity:1}
         .support-note{margin-top:45px;background:linear-gradient(135deg,rgba(139,92,246,.14),rgba(29,17,48,.7));border:1px solid rgba(139,92,246,.35);border-radius:20px;padding:35px;display:flex;gap:25px;align-items:flex-start;position:relative;z-index:1}
-        .support-note .big-ico{font-size:2.6rem;animation:flicker 4s infinite}
-        .support-note h4{color:var(--blanc);font-size:1.3rem;margin-bottom:10px}
+        .support-note .big-ico{font-size:2.6rem;color:var(--primary);filter:drop-shadow(0 0 15px rgba(255,117,24,.6));animation:flicker 4s infinite;flex-shrink:0}
+        .support-note h4{color:var(--blanc);font-size:1.3rem;margin-bottom:10px;display:flex;align-items:center;gap:12px}
         .support-note p{color:var(--gris);line-height:1.8;font-size:1rem}
+        .warning-text{margin-top:14px;font-size:.9rem;color:var(--warning);display:flex;align-items:center;gap:8px;font-weight:600}
         /* ===== PARCOURS ===== */
         .milestones{max-width:900px;margin:0 auto;position:relative;padding-left:44px;z-index:1}
         .milestones::before{content:'';position:absolute;left:14px;top:8px;bottom:8px;width:3px;background:linear-gradient(180deg,var(--primary),var(--violet));border-radius:3px;box-shadow:0 0 15px rgba(255,117,24,.3)}
         .milestone-item{position:relative;margin-bottom:45px}
-        .milestone-item::before{content:'🎃';position:absolute;left:-42px;top:26px;font-size:22px;filter:drop-shadow(0 0 8px rgba(255,117,24,.6));animation:flicker 5s infinite}
+        .milestone-item::before{content:'\f6e4';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:-38px;top:28px;font-size:22px;color:var(--primary);filter:drop-shadow(0 0 10px rgba(255,117,24,.7));animation:flicker 5s infinite}
         .milestone-card{background:rgba(29,17,48,.65);border:1px solid var(--border);border-radius:20px;padding:32px;backdrop-filter:blur(10px);transition:all .4s}
         .milestone-card:hover{border-color:rgba(255,117,24,.4);transform:translateX(8px);box-shadow:0 15px 50px rgba(255,117,24,.15)}
         .milestone-date{display:inline-flex;align-items:center;gap:8px;color:var(--orange-doux);font-size:.92rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
-        .milestone-card h3{font-size:1.45rem;color:var(--blanc);margin-bottom:10px;font-weight:800}
+        .milestone-card h3{font-size:1.45rem;color:var(--blanc);margin-bottom:10px;font-weight:800;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+        .milestone-card h3 i{color:var(--primary)}
         .milestone-card p{color:var(--gris);line-height:1.8}
         /* ===== RÈGLES ===== */
         .rules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:30px;position:relative;z-index:1}
@@ -190,21 +196,13 @@
         .sanction-item:nth-child(4)::before,.sanction-item:nth-child(5)::before{background:var(--danger)}
         .sanction-item h4{color:var(--blanc);margin-bottom:10px;font-size:1.2rem}
         .sanction-item p{color:var(--gris);font-size:1rem;line-height:1.7}
-        /* ===== PARTENARIATS ===== */
+        /* ===== PARTENARIATS (conditions seulement) ===== */
         .cond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;position:relative;z-index:1}
         .cond-card{background:rgba(29,17,48,.65);border:1px solid var(--border);border-radius:20px;padding:32px;text-align:center;transition:all .4s}
         .cond-card:hover{transform:translateY(-6px);border-color:rgba(255,117,24,.45);box-shadow:0 20px 50px rgba(0,0,0,.5)}
-        .cond-card .cond-ico{font-size:2.4rem;margin-bottom:16px;display:block}
+        .cond-card .cond-ico{font-size:2.2rem;margin-bottom:16px;display:inline-block;color:var(--primary)}
         .cond-card h4{color:var(--blanc);font-size:1.2rem;margin-bottom:12px}
         .cond-card p{color:var(--gris);font-size:.98rem;line-height:1.7}
-        .partners-wrap{margin-top:70px;position:relative;z-index:1}
-        .partners-wrap h3{text-align:center;font-family:'Playfair Display',serif;font-size:2rem;color:var(--blanc);margin-bottom:35px}
-        .partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-        .partner-card{background:rgba(20,11,33,.8);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;transition:all .35s}
-        .partner-card:hover{border-color:rgba(139,92,246,.5);transform:translateY(-5px);box-shadow:0 15px 40px rgba(139,92,246,.15)}
-        .partner-card .p-emo{font-size:2rem;display:block;margin-bottom:10px}
-        .partner-card h5{color:var(--blanc);font-size:1.05rem;margin-bottom:6px}
-        .partner-card p{color:var(--gris-2);font-size:.85rem;line-height:1.5}
         /* ===== ÉQUIPE ===== */
         .team-section{background:linear-gradient(180deg,var(--nuit-1),var(--nuit-0))}
         .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:35px;max-width:1200px;margin:0 auto;position:relative;z-index:1}
@@ -218,6 +216,8 @@
         .team-card h3{font-size:1.8rem;background:var(--grad-os);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px;font-weight:800}
         .team-role{display:inline-block;padding:6px 20px;border-radius:20px;font-size:.9rem;font-weight:700;margin-bottom:20px;background:var(--grad-primary);color:#fff}
         .team-card p{color:var(--gris);line-height:1.8}
+        .team-link{display:inline-flex;align-items:center;gap:8px;margin-top:15px;font-size:.95rem;color:var(--primary-light);text-decoration:none;font-weight:600;transition:all .3s}
+        .team-link:hover{color:var(--primary);gap:12px}
         /* ===== FAQ ===== */
         .faq-container{max-width:850px;margin:0 auto;position:relative;z-index:1}
         .faq-item{background:rgba(29,17,48,.65);border-radius:20px;margin-bottom:25px;border:1px solid var(--border);overflow:hidden;transition:all .5s;backdrop-filter:blur(10px)}
@@ -227,7 +227,9 @@
         .faq-question i{transition:transform .5s;color:var(--primary);font-size:1.3rem}
         .faq-item.active .faq-question i{transform:rotate(180deg);color:var(--violet)}
         .faq-answer{max-height:0;overflow:hidden;transition:max-height .6s ease,padding .6s ease;padding:0 35px;color:var(--gris);line-height:1.9;font-size:1.05rem}
-        .faq-item.active .faq-answer{max-height:500px;padding:0 35px 35px 35px}
+        .faq-answer a{color:var(--primary-light);text-decoration:underline;text-underline-offset:3px}
+        .faq-answer a:hover{color:var(--primary)}
+        .faq-item.active .faq-answer{max-height:600px;padding:0 35px 35px 35px}
         /* ===== CTA ===== */
         .cta{background:radial-gradient(ellipse at center,rgba(255,117,24,.28),transparent 70%),radial-gradient(ellipse at 20% 80%,rgba(139,92,246,.18),transparent 60%);text-align:center;padding:150px 0;position:relative;overflow:hidden}
         .cta h2{font-size:4.2rem;margin-bottom:30px;font-weight:400;font-family:'Creepster',cursive;letter-spacing:4px;background:var(--grad-os);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradShift 4s ease infinite;filter:drop-shadow(0 0 25px rgba(255,117,24,.35))}
@@ -308,7 +310,7 @@
         <img src="https://cdn.discordapp.com/icons/1529109338013171713/ed4ba1a7238911168293905e106dd335.webp?size=1024" alt="Logo" class="preloader-logo">
         <div class="preloader-percent" id="preloaderPercent">0%</div>
         <div class="preloader-bar"><i id="preloaderBarFill"></i></div>
-        <div class="preloader-text">🎃 Chargement...</div>
+        <div class="preloader-text"><i class="fas fa-ghost"></i> Chargement...</div>
     </div>
     <div class="scroll-progress" id="scrollProgress"></div>
     <canvas id="emberCanvas"></canvas>
@@ -330,43 +332,44 @@
     </header>
     <section class="hero" id="accueil">
         <div class="moon"></div>
-        <span class="bat" style="top:18%;font-size:34px;animation-duration:19s;animation-delay:0s">🦇</span>
-        <span class="bat" style="top:30%;font-size:24px;animation-duration:24s;animation-delay:4s">🦇</span>
-        <span class="bat" style="top:12%;font-size:42px;animation-duration:28s;animation-delay:9s">🦇</span>
+        <!-- SVG chauve-souris custom -->
+        <svg class="bat-svg" style="top:18%;width:42px;animation-duration:19s;animation-delay:0s" viewBox="0 0 64 64" fill="#8b5cf6" aria-hidden="true"><path d="M32 18c-3 4-10 4-16 0-4-3-10-4-16 0 4 4 8 10 8 16 4-2 8-2 12 0 4 2 8 2 12 0 4-2 8-2 12 0 0-6 4-12 8-16-6-4-12-3-16 0-6 4-13 4-16 0zm0 14c-4 0-8 4-8 8s4 8 8 8 8-4 8-8-4-8-8-8z"/></svg>
+        <svg class="bat-svg" style="top:30%;width:30px;animation-duration:24s;animation-delay:4s" viewBox="0 0 64 64" fill="#8b5cf6" aria-hidden="true"><path d="M32 18c-3 4-10 4-16 0-4-3-10-4-16 0 4 4 8 10 8 16 4-2 8-2 12 0 4 2 8 2 12 0 4-2 8-2 12 0 0-6 4-12 8-16-6-4-12-3-16 0-6 4-13 4-16 0zm0 14c-4 0-8 4-8 8s4 8 8 8 8-4 8-8-4-8-8-8z"/></svg>
+        <svg class="bat-svg" style="top:12%;width:52px;animation-duration:28s;animation-delay:9s" viewBox="0 0 64 64" fill="#8b5cf6" aria-hidden="true"><path d="M32 18c-3 4-10 4-16 0-4-3-10-4-16 0 4 4 8 10 8 16 4-2 8-2 12 0 4 2 8 2 12 0 4-2 8-2 12 0 0-6 4-12 8-16-6-4-12-3-16 0-6 4-13 4-16 0zm0 14c-4 0-8 4-8 8s4 8 8 8 8-4 8-8-4-8-8-8z"/></svg>
         <svg class="skyline" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><path fill="#0d0716" d="M0,220 L0,160 L70,160 L70,120 L110,120 L110,160 L160,160 L160,95 L175,95 L175,75 L182,75 L182,55 L186,28 L190,55 L190,75 L197,75 L197,95 L212,95 L212,160 L270,160 L270,130 L320,130 L320,160 L380,160 L380,70 L395,70 L395,50 L402,18 L409,50 L409,70 L424,70 L424,160 L480,160 L480,110 L540,110 L540,160 L600,160 L600,140 L660,140 L660,160 L720,160 L720,90 L760,90 L760,160 L820,160 L820,120 L880,120 L880,160 L940,160 L940,100 L955,100 L955,80 L962,80 L962,100 L977,100 L977,160 L1040,160 L1040,130 L1100,130 L1100,160 L1160,160 L1160,152 Q1200,88 1240,152 L1240,160 L1300,160 L1300,110 L1360,110 L1360,160 L1440,160 L1440,220 Z"/></svg>
         <div class="fog f1"></div>
         <div class="fog f2"></div>
         <div class="hero-content" id="heroContent">
-            <div class="hero-badge">🎃 Édition Spéciale Halloween 2026</div>
+            <div class="hero-badge"><i class="fas fa-ghost"></i> Édition Spéciale Halloween 2026</div>
             <h2 id="heroTitle" data-text="SPOT QUÉBÉCOIS"></h2>
             <p class="hero-subtitle" id="heroSub"></p>
             <p class="hero-description">Tu cherches un endroit où jaser, jouer, découvrir, connecter et rencontrer du monde d'ici ? Spot Québécois, c'est le serveur communautaire québécois où ça bouge tous les jours. Une communauté active, respectueuse et fière de représenter le Québec.</p>
             <div class="btn-group">
-                <a href="https://discord.gg/b5ZunqKzbv" class="btn" target="_blank"><i class="fab fa-discord"></i> Rejoindre le serveur</a>
+                <a href="https://discord.gg/wsH8tXQC7V" class="btn" target="_blank"><i class="fab fa-discord"></i> Rejoindre le serveur</a>
                 <a href="#apropos" class="btn btn-secondary">Découvrir plus</a>
             </div>
         </div>
     </section>
     <div class="candy"></div>
     <div class="marquee"><div class="marquee-track">
-        <div class="marquee-item">VIBE LOCALE <span class="sep">🎃</span> COMMUNAUTÉ ACCUEILLANTE <span class="sep">🦇</span> 100% D'ICI <span class="sep">👻</span> ÉVÉNEMENTS <span class="sep">🕸️</span> ENTRAIDE <span class="sep">🎃</span> MODÉRATION PRO <span class="sep">🦇</span> SOUTIEN BIENVEILLANT <span class="sep">👻</span></div>
-        <div class="marquee-item">VIBE LOCALE <span class="sep">🎃</span> COMMUNAUTÉ ACCUEILLANTE <span class="sep">🦇</span> 100% D'ICI <span class="sep">👻</span> ÉVÉNEMENTS <span class="sep">🕸️</span> ENTRAIDE <span class="sep">🎃</span> MODÉRATION PRO <span class="sep">🦇</span> SOUTIEN BIENVEILLANT <span class="sep">👻</span></div>
+        <div class="marquee-item">VIBE LOCALE <i class="fas fa-ghost sep"></i> COMMUNAUTÉ ACCUEILLANTE <i class="fas fa-spider sep"></i> 100% D'ICI <i class="fas fa-mask sep"></i> ÉVÉNEMENTS <i class="fas fa-spider sep"></i> ENTRAIDE <i class="fas fa-ghost sep"></i> MODÉRATION PRO <i class="fas fa-spider sep"></i> SOUTIEN BIENVEILLANT <i class="fas fa-mask sep"></i></div>
+        <div class="marquee-item">VIBE LOCALE <i class="fas fa-ghost sep"></i> COMMUNAUTÉ ACCUEILLANTE <i class="fas fa-spider sep"></i> 100% D'ICI <i class="fas fa-mask sep"></i> ÉVÉNEMENTS <i class="fas fa-spider sep"></i> ENTRAIDE <i class="fas fa-ghost sep"></i> MODÉRATION PRO <i class="fas fa-spider sep"></i> SOUTIEN BIENVEILLANT <i class="fas fa-mask sep"></i></div>
     </div></div>
     <div class="candy"></div>
     <section id="apropos">
-        <span class="web tl">🕸️</span><span class="web tr">🕸️</span>
+        <i class="fas fa-spider web-corner tl"></i><i class="fas fa-spider web-corner tr"></i>
         <div class="container">
-            <div class="section-header reveal"><span class="kicker">🦇 Ce que tu vas trouver</span><h2>Une communauté qui se sent comme chez toi</h2><p>Un environnement structuré, accueillant et professionnel, tout en conservant une ambiance détendue et authentique. Ici, on jase, on joue, on s'entraide et on connecte entre Québécois.</p></div>
+            <div class="section-header reveal"><span class="kicker"><i class="fas fa-ghost"></i> Ce que tu vas trouver</span><h2>Une communauté qui se sent comme chez toi</h2><p>Un environnement structuré, accueillant et professionnel, tout en conservant une ambiance détendue et authentique. Ici, on jase, on joue, on s'entraide et on connecte entre Québécois.</p></div>
             <div class="features-grid stagger">
                 <div class="feature-card"><div class="spotlight"></div><div class="feature-icon"><i class="fas fa-comments"></i></div><h3>Salons de Discussion</h3><p>Des espaces pour jaser de tout et de rien, partager ton humour et rencontrer du monde bienveillant, peu importe ta région du Québec.</p></div>
-                <div class="feature-card"><div class="spotlight"></div><div class="feature-icon"><i class="fas fa-gamepad"></i></div><h3>Gaming, Entraide & Humour</h3><p>Les salons 🕹️・jeux et 💬・quizz sont faits pour toi : quiz de tous genres, jeux via commandes et sessions improvisées entre membres.</p></div>
+                <div class="feature-card"><div class="spotlight"></div><div class="feature-icon"><i class="fas fa-gamepad"></i></div><h3>Gaming, Entraide & Humour</h3><p>Les salons <a href="https://discord.com/channels/1529109338013171713/1529507640130932898" target="_blank" style="color:var(--primary-light);text-decoration:underline">🕹️・jeux</a> et <a href="https://discord.com/channels/1529109338013171713/1529116624471457953" target="_blank" style="color:var(--primary-light);text-decoration:underline">💬・quizz</a> sont faits pour toi : quiz de tous genres, jeux via commandes et sessions improvisées.</p></div>
                 <div class="feature-card"><div class="spotlight"></div><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h3>Événements Communautaires</h3><p>Des activités régulières organisées par l'équipe ou les membres : giveaways, musique québécoise en vocal, concours et soirées mémorables.</p></div>
                 <div class="feature-card"><div class="spotlight"></div><div class="feature-icon"><i class="fas fa-shield-halved"></i></div><h3>Modération Professionnelle</h3><p>Une ambiance sécuritaire garantie par une équipe attentive, respectueuse et réactive. Des règles claires, appliquées avec justesse.</p></div>
                 <div class="feature-card"><div class="spotlight"></div><div class="feature-icon"><i class="fas fa-brain"></i></div><h3>Soutien Thérapeutique</h3><p>Un espace unique et bienveillant : des ressources fiables pour parler à de vrais professionnels et un salon de support encadré par nos intervenants.</p></div>
                 <div class="feature-card"><div class="spotlight"></div><div class="feature-icon"><i class="fas fa-ticket"></i></div><h3>Tickets & Suggestions</h3><p>Un support structuré avec 3 types de tickets et un système de suggestions via DraftBot. Ton avis compte vraiment et façonne le serveur.</p></div>
             </div>
             <div class="status-banner reveal">
-                <h3><i class="fas fa-lock"></i> Statut des Candidatures</h3>
+                <h3><i class="fas fa-lock"></i> Statut des <a href="https://discord.com/channels/1529109338013171713/1529657786882068490" target="_blank" style="color:var(--danger);text-decoration:underline">Candidatures</a></h3>
                 <p style="color:var(--gris);margin-bottom:20px;">Merci de ne pas solliciter les tickets d'administration concernant l'ouverture des candidatures ou toute demande d'exception. L'ouverture se fera au moment prévu par l'équipe de gestion !</p>
                 <div class="status-grid">
                     <div class="status-item"><i class="fas fa-circle-xmark"></i> STAFF : Fermée</div>
@@ -379,60 +382,81 @@
     </section>
     <section id="soutien" style="background:linear-gradient(180deg,var(--nuit-0),var(--nuit-1))">
         <div class="container">
-            <div class="section-header reveal"><span class="kicker">🧠 Une communauté bienveillante</span><h2>Soutien & Ressources Thérapeutiques</h2><p>Parce que la santé mentale compte, Spot Québécois offre des espaces sécuritaires pour les moments plus difficiles. Sans jugement, en toute confidentialité.</p></div>
+            <div class="section-header reveal"><span class="kicker"><i class="fas fa-heart-pulse"></i> Une communauté bienveillante</span><h2>Soutien & Ressources Thérapeutiques</h2><p>Parce que la santé mentale compte, Spot Québécois offre des espaces sécuritaires pour les moments plus difficiles. Sans jugement, en toute confidentialité.</p></div>
             <div class="resource-grid stagger">
-                <div class="resource-card"><h4><i class="fas fa-phone-volume"></i> Tel-Jeunes</h4><p>Plateforme où tu peux parler avec des intervenants par chat, texto ou téléphone.</p></div>
-                <div class="resource-card"><h4><i class="fas fa-heart"></i> Jeunesse, J'écoute</h4><p>Service national avec des professionnels disponibles pour discuter et t'aider à comprendre ce que tu vis.</p></div>
-                <div class="resource-card"><h4><i class="fas fa-headset"></i> Info-Social 811</h4><p>Service du Québec pour parler avec un intervenant psychosocial qui peut t'orienter selon ta situation.</p></div>
-                <div class="resource-card"><h4><i class="fas fa-hands-holding-heart"></i> Centre de prévention du suicide</h4><p>Site qui explique quoi faire en cas de détresse et comment parler à un intervenant spécialisé.</p></div>
-                <div class="resource-card"><h4><i class="fas fa-ear-listen"></i> Écoute-Entraide</h4><p>Organisme qui offre une écoute active pour les personnes en détresse émotionnelle.</p></div>
+                <a href="https://www.teljeunes.com/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <h4><i class="fas fa-phone-volume"></i> Tel-Jeunes</h4>
+                    <p>Plateforme où tu peux parler avec des intervenants par chat, texto ou téléphone.</p>
+                    <span class="link-indicator"><i class="fas fa-arrow-up-right-from-square"></i> teljeunes.com</span>
+                </a>
+                <a href="https://jeunessejecoute.ca/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <h4><i class="fas fa-heart"></i> Jeunesse, J'écoute</h4>
+                    <p>Service national avec des professionnels disponibles pour discuter et t'aider à comprendre ce que tu vis.</p>
+                    <span class="link-indicator"><i class="fas fa-arrow-up-right-from-square"></i> jeunessejecoute.ca</span>
+                </a>
+                <a href="https://www.quebec.ca/sante/trouver-une-ressource/info-social-811" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <h4><i class="fas fa-headset"></i> Info-Social 811</h4>
+                    <p>Service du Québec pour parler avec un intervenant psychosocial qui peut t'orienter selon ta situation.</p>
+                    <span class="link-indicator"><i class="fas fa-arrow-up-right-from-square"></i> quebec.ca</span>
+                </a>
+                <a href="https://www.cpsquebec.ca/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <h4><i class="fas fa-hands-holding-heart"></i> Centre de prévention du suicide</h4>
+                    <p>Site qui explique quoi faire en cas de détresse et comment parler à un intervenant spécialisé.</p>
+                    <span class="link-indicator"><i class="fas fa-arrow-up-right-from-square"></i> cpsquebec.ca</span>
+                </a>
+                <a href="https://www.ecoute-entraide.org/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <h4><i class="fas fa-ear-listen"></i> Écoute-Entraide</h4>
+                    <p>Organisme qui offre une écoute active pour les personnes en détresse émotionnelle.</p>
+                    <span class="link-indicator"><i class="fas fa-arrow-up-right-from-square"></i> ecoute-entraide.org</span>
+                </a>
             </div>
             <div class="support-note reveal">
-                <span class="big-ico">❤️</span>
+                <i class="fas fa-heart big-ico"></i>
                 <div>
-                    <h4>Le salon ❤️・support-thérapeutique</h4>
-                    <p>Un espace réel de soutien pour te déposer, vider ton sac et parler de ce que tu vis, même sans vouloir contacter un professionnel. Respect du vécu des autres, confidentialité totale : ce qui est partagé ici reste ici. On écoute, on accompagne — sans jamais remplacer les professionnels. ⚠️ Toute fausse demande entraînera des sanctions sévères.</p>
+                    <h4><i class="fas fa-hand-holding-heart"></i> Le salon support-thérapeutique</h4>
+                    <p>Un espace réel de soutien pour te déposer, vider ton sac et parler de ce que tu vis, même sans vouloir contacter un professionnel. Respect du vécu des autres, confidentialité totale : ce qui est partagé ici reste ici. On écoute, on accompagne — sans jamais remplacer les professionnels.</p>
+                    <div class="warning-text"><i class="fas fa-triangle-exclamation"></i> Toute fausse demande entraînera des sanctions sévères.</div>
                 </div>
             </div>
         </div>
     </section>
     <section id="parcours">
-        <span class="web tr">🕸️</span>
+        <i class="fas fa-spider web-corner tr"></i>
         <div class="container">
-            <div class="section-header reveal"><span class="kicker">🕰️ Notre histoire</span><h2>Le Parcours du Serveur</h2><p>De l'ouverture officielle jusqu'à aujourd'hui : les grands moments qui ont façonné notre communauté.</p></div>
+            <div class="section-header reveal"><span class="kicker"><i class="fas fa-clock-rotate-left"></i> Notre histoire</span><h2>Le Parcours du Serveur</h2><p>De l'ouverture officielle jusqu'à aujourd'hui : les grands moments qui ont façonné notre communauté.</p></div>
             <div class="milestones stagger">
                 <div class="milestone-item"><div class="milestone-card">
                     <span class="milestone-date"><i class="fas fa-calendar-day"></i> 28 juillet 2026</span>
-                    <h3>🎉 Ouverture officielle du serveur</h3>
+                    <h3><i class="fas fa-rocket"></i> Ouverture officielle du serveur</h3>
                     <p>Après quelques ajustements finaux, Spot Québécois ouvre officiellement ses portes. L'objectif est clair : rassembler les Québécois dans un espace sain et actif.</p>
                 </div></div>
                 <div class="milestone-item"><div class="milestone-card">
                     <span class="milestone-date"><i class="fas fa-calendar-day"></i> 13 septembre 2026</span>
-                    <h3>🏆 Cap des 30 membres atteint</h3>
+                    <h3><i class="fas fa-trophy"></i> Cap des 30 membres atteint</h3>
                     <p>Objectif accompli ! Les candidatures STAFF, Créateur(trice) de contenu et Organisateur(trice) d'événements ouvrent, et les activités promises se mettent en place.</p>
                 </div></div>
                 <div class="milestone-item"><div class="milestone-card">
                     <span class="milestone-date"><i class="fas fa-calendar-day"></i> 22 septembre 2026</span>
-                    <h3>🧠 Arrival du soutien thérapeutique</h3>
-                    <p>Ouverture des salons 🧠・ressources-thérapeutiques et ❤️・support-thérapeutique : un espace sécuritaire et encadré, unique dans la communauté.</p>
+                    <h3><i class="fas fa-brain"></i> Arrivée du soutien thérapeutique</h3>
+                    <p>Ouverture des salons ressources-thérapeutiques et support-thérapeutique : un espace sécuritaire et encadré, unique dans la communauté.</p>
                 </div></div>
                 <div class="milestone-item"><div class="milestone-card">
                     <span class="milestone-date"><i class="fas fa-calendar-day"></i> 30 septembre 2026</span>
-                    <h3>🚀 Objectif 50 membres</h3>
+                    <h3><i class="fas fa-bullseye"></i> Objectif 50 membres</h3>
                     <p>Cap vers la fin octobre : événements, giveaways, musique en vocal et bien plus encore sont annoncés pour célébrer ensemble la croissance de la communauté.</p>
                 </div></div>
                 <div class="milestone-item"><div class="milestone-card">
                     <span class="milestone-date"><i class="fas fa-calendar-day"></i> 31 octobre 2026</span>
-                    <h3>🎃 Édition Halloween du site</h3>
-                    <p>Le site web fait peau neuve avec une refonte complète aux couleurs d'Halloween. Des friandises, pas de tours !</p>
+                    <h3><i class="fas fa-ghost"></i> Édition Halloween du site</h3>
+                    <p>Le site web fait peau neuve avec une refonte complète aux couleurs d'Halloween.</p>
                 </div></div>
             </div>
         </div>
     </section>
     <section id="reglements" style="background:linear-gradient(180deg,var(--nuit-0),var(--nuit-1))">
-        <span class="web tl">🕸️</span><span class="web tr">🕸️</span>
+        <i class="fas fa-spider web-corner tl"></i><i class="fas fa-spider web-corner tr"></i>
         <div class="container">
-            <div class="section-header reveal"><span class="kicker">📜 À lire absolument</span><h2>Règlements du Serveur</h2><p>Pour garantir un environnement structuré, accueillant et professionnel. Le non-respect entraînera des sanctions.</p></div>
+            <div class="section-header reveal"><span class="kicker"><i class="fas fa-scroll"></i> À lire absolument</span><h2>Règlements du Serveur</h2><p>Pour garantir un environnement structuré, accueillant et professionnel. Le non-respect entraînera des sanctions.</p></div>
             <div class="rules-grid stagger">
                 <div class="rule-card"><span class="rule-num">01</span><h4><i class="fas fa-handshake"></i> Respect</h4><p>Le respect est la base du serveur. Toute forme d'irrespect envers un membre, un modérateur ou le serveur entraîne des sanctions immédiates pouvant aller jusqu'au bannissement permanent. Aucune provocation, intimidation, harcèlement ou attitude toxique ne sera tolérée.</p></div>
                 <div class="rule-card"><span class="rule-num">02</span><h4><i class="fas fa-user-circle"></i> Profil & Pseudo</h4><p>Les pseudos, statuts et images de profil doivent rester appropriés. Tout contenu offensant, trompeur, impersonnel ou visant à imiter un membre/STAFF sera sanctionné.</p></div>
@@ -458,61 +482,47 @@
         </div>
     </section>
     <section id="partenariats">
-        <span class="web tl">🕸️</span>
+        <i class="fas fa-spider web-corner tl"></i>
         <div class="container">
-            <div class="section-header reveal"><span class="kicker">🤝 Grandir ensemble</span><h2>Partenariats & Conditions</h2><p>Les partenariats sont réservés aux serveurs communautaires francophones. Voici nos conditions claires et transparentes.</p></div>
+            <div class="section-header reveal"><span class="kicker"><i class="fas fa-handshake"></i> Grandir ensemble</span><h2>Partenariats & Conditions</h2><p>Les partenariats sont réservés aux serveurs communautaires francophones. Voici nos conditions claires et transparentes.</p></div>
             <div class="cond-grid stagger">
-                <div class="cond-card"><span class="cond-ico">✅</span><h4>Conditions Générales</h4><p>Votre serveur doit être communautaire francophone, conforme aux règles Discord et sans contenu NSFW, gore, illégal ou lié à ER:LC.</p></div>
-                <div class="cond-card"><span class="cond-ico">👥</span><h4>0 – 20 membres</h4><p>Aucun ping de notre côté ; de votre côté, ping everyone.</p></div>
-                <div class="cond-card"><span class="cond-ico">👥</span><h4>21 – 40 membres</h4><p>On ping Partenariat, et vous pingez soit Partenariat soit everyone.</p></div>
-                <div class="cond-card"><span class="cond-ico">👥</span><h4>41 – 100 membres +</h4><p>Nous pingons everyone, et vous ne pingez rien ou seulement Partenariat.</p></div>
+                <div class="cond-card"><i class="fas fa-circle-check cond-ico"></i><h4>Conditions Générales</h4><p>Votre serveur doit être communautaire francophone, conforme aux règles Discord et sans contenu NSFW, gore, illégal ou lié à ER:LC.</p></div>
+                <div class="cond-card"><i class="fas fa-users cond-ico"></i><h4>0 – 20 membres</h4><p>Aucun ping de notre côté ; de votre côté, ping everyone.</p></div>
+                <div class="cond-card"><i class="fas fa-users cond-ico"></i><h4>21 – 40 membres</h4><p>On ping Partenariat, et vous pingez soit Partenariat soit everyone.</p></div>
+                <div class="cond-card"><i class="fas fa-users cond-ico"></i><h4>41 – 100 membres +</h4><p>Nous pingons everyone, et vous ne pingez rien ou seulement Partenariat.</p></div>
             </div>
-            <p class="reveal" style="text-align:center;color:var(--gris);margin-top:35px;position:relative;z-index:1">⚠️ Le STAFF se réserve le droit d'ajouter des conditions supplémentaires lors de l'ouverture d'un ticket de partenariat.</p>
+            <p class="reveal" style="text-align:center;color:var(--gris);margin-top:35px;position:relative;z-index:1"><i class="fas fa-triangle-exclamation" style="color:var(--warning)"></i> Le STAFF se réserve le droit d'ajouter des conditions supplémentaires lors de l'ouverture d'un ticket de partenariat.</p>
             <div style="text-align:center;margin-top:35px" class="reveal"><a href="https://discord.com/channels/1529109338013171713/1529487343382302790" target="_blank" class="btn"><i class="fas fa-ticket"></i> Ouvrir un ticket partenariat</a></div>
-            <div class="partners-wrap reveal">
-                <h3>️ Ils nous font confiance 🕸️</h3>
-                <div class="partners-grid stagger">
-                    <div class="partner-card"><span class="p-emo">☕</span><h5>Le P'tit Refuge</h5><p>Ton coin de rassemblement chaleureux et 100% francophone</p></div>
-                    <div class="partner-card"><span class="p-emo">🌍</span><h5>WAKANDA #🇫🇷</h5><p>Une communauté qui va t'enlever toute source d'ennui</p></div>
-                    <div class="partner-card"><span class="p-emo">🎮</span><h5>Communauté Revento_28</h5><p>Gaming, streaming et convivialité au rendez-vous</p></div>
-                    <div class="partner-card"><span class="p-emo">𐙚</span><h5>BADDIE'S</h5><p>Là où les stars se rencontrent</p></div>
-                    <div class="partner-card"><span class="p-emo">🔥</span><h5>ZONE SAFE</h5><p>Un serveur drôle et actif pour tes meilleurs amis Discordiens</p></div>
-                    <div class="partner-card"><span class="p-emo">💻</span><h5>FatalError</h5><p>Tech, sécurité & développement pour les esprits curieux</p></div>
-                    <div class="partner-card"><span class="p-emo">🚀</span><h5>AllôStaff</h5><p>La plateforme de recrutement de staff Discord</p></div>
-                    <div class="partner-card"><span class="p-emo">🥢</span><h5>Ayuri</h5><p>Un serveur accueillant, sans toxicité ni discrimination</p></div>
-                    <div class="partner-card"><span class="p-emo">⚡</span><h5>Wara</h5><p>Nouvelle commu tout juste lancée, membres & staff bienvenus</p></div>
-                </div>
-            </div>
         </div>
     </section>
     <section class="team-section" id="equipe">
         <div class="container">
-            <div class="section-header reveal"><span class="kicker">👑 Aux commandes</span><h2>Notre Équipe</h2><p>Une personne passionnée et dévouée pour vous offrir la meilleure expérience communautaire.</p></div>
+            <div class="section-header reveal"><span class="kicker"><i class="fas fa-crown"></i> Aux commandes</span><h2>Notre Équipe</h2><p>Une personne passionnée et dévouée pour vous offrir la meilleure expérience communautaire.</p></div>
             <div class="team-grid stagger" style="max-width:600px">
                 <div class="team-card">
                     <div class="team-img-wrap">
-                        <img src="https://cdn.discordapp.com/avatars/1317270253809700884/7896ba0de6a044e37b74c58dbe6a9667.webp?size=1024" alt="O. Beaulieu" class="team-img">
+                        <img src="https://cdn.discordapp.com/avatars/1317270253809700884/640d0a49f4d0ffd1c76c41b8a15e701d.webp?size=1024" alt="O. Beaulieu" class="team-img">
                     </div>
                     <h3>O. Beaulieu</h3>
                     <span class="team-role">Propriétaire & Fondateur</span>
                     <p>Olivier Beaulieu, 15 ans, passionné de gaming et de gestion de communauté. Fort de son expérience dans le développement de plusieurs serveurs, il dirige Spot Québécois avec une seule vision : rassembler les Québécois dans un espace sain, amusant et accueillant.</p>
-                    <p style="margin-top:15px;font-size:.95rem"><i class="fab fa-discord"></i> @o_beaulieu</p>
+                    <a href="https://discord.com/users/1317270253809700884" target="_blank" rel="noopener noreferrer" class="team-link"><i class="fab fa-discord"></i> @o_beaulieu <i class="fas fa-arrow-up-right-from-square" style="font-size:.8rem"></i></a>
                 </div>
             </div>
         </div>
     </section>
     <section id="faq">
-        <span class="web tr">🕸️</span>
+        <i class="fas fa-spider web-corner tr"></i>
         <div class="container">
-            <div class="section-header reveal"><span class="kicker">❓ Tout savoir</span><h2>Questions Fréquentes</h2><p>Un guide simple et clair pour aider les membres à mieux comprendre le fonctionnement du serveur.</p></div>
+            <div class="section-header reveal"><span class="kicker"><i class="fas fa-question-circle"></i> Tout savoir</span><h2>Questions Fréquentes</h2><p>Un guide simple et clair pour aider les membres à mieux comprendre le fonctionnement du serveur.</p></div>
             <div class="faq-container stagger">
                 <div class="faq-item">
                     <div class="faq-question">Comment devenir STAFF ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Tu dois être actif, respectueux et impliqué dans la communauté. Quand les recrutements ouvrent, un formulaire apparaît dans 📖・candidatures. L'administration regarde ton attitude, ta maturité et ta fiabilité avant de te choisir.</div>
+                    <div class="faq-answer">Tu dois être actif, respectueux et impliqué dans la communauté. Quand les recrutements ouvrent, un formulaire apparaît dans le salon <a href="https://discord.com/channels/1529109338013171713/1529657534007476296" target="_blank">📖・candidatures</a>. L'administration regarde ton attitude, ta maturité et ta fiabilité avant de te choisir.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Comment organiser un événement ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Pour organiser un événement, tu dois d'abord être Organisateur d'événements. Pour le devenir, rends-toi dans le salon 📖・candidatures et remplis le formulaire. Si tu ne vois pas la candidature, c'est que les recrutements ne sont pas ouverts. Les infos d'ouverture sont dans 🚦・statuts-candidatures.</div>
+                    <div class="faq-answer">Pour organiser un événement, tu dois d'abord être Organisateur d'événements. Pour le devenir, rends-toi dans le salon <a href="https://discord.com/channels/1529109338013171713/1529657534007476296" target="_blank">📖・candidatures</a> et remplis le formulaire. Si tu ne vois pas la candidature, c'est que les recrutements ne sont pas ouverts. Les infos d'ouverture sont dans <a href="https://discord.com/channels/1529109338013171713/1529657786882068490" target="_blank">🚦・statuts-candidatures</a>.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Comment obtenir un rôle spécial ? <i class="fas fa-chevron-down"></i></div>
@@ -520,21 +530,21 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Comment signaler un problème ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Tu ouvres un ticket dans ⛔・tickets. Tu expliques ce qui s'est passé et tu ajoutes des preuves si tu en as. Le STAFF analyse et règle la situation rapidement. Pour un problème avec un membre du STAFF, utilise le ticket administrateur prévu à cet effet.</div>
+                    <div class="faq-answer">Tu ouvres un ticket dans <a href="https://discord.com/channels/1529109338013171713/1529487343382302790" target="_blank">⛔・tickets</a>. Tu expliques ce qui s'est passé et tu ajoutes des preuves si tu en as. Le STAFF analyse et règle la situation rapidement. Pour un problème avec un membre du STAFF, utilise le ticket administrateur prévu à cet effet.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Comment devenir partenaire du serveur ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Pour devenir partenaire, ouvre un ticket administrateur dans ⛔・tickets. L'administration vérifie si ton serveur respecte nos conditions de partenariat (serveur communautaire francophone, conforme, sans contenu interdit) et confirme si c'est accepté.</div>
+                    <div class="faq-answer">Pour devenir partenaire, ouvre un ticket administrateur dans <a href="https://discord.com/channels/1529109338013171713/1529487343382302790" target="_blank">⛔・tickets</a>. L'administration vérifie si ton serveur respecte nos conditions de partenariat (serveur communautaire francophone, conforme, sans contenu interdit) et confirme si c'est accepté.</div>
                 </div>
             </div>
         </div>
     </section>
     <section class="cta" id="rejoindre">
         <div class="container"><div class="reveal-scale">
-            <span class="kicker" style="font-size:1.6rem">🎃 Des friandises ou un sort ?</span>
+            <span class="kicker" style="font-size:1.6rem"><i class="fas fa-ghost"></i> Des friandises ou un sort ?</span>
             <h2>Rejoins la communauté qui rassemble le Québec !</h2>
             <p>Une vibe locale, une communauté accueillante, un serveur qui évolue avec ses membres. Cet Halloween, la seule friandise qu'on offre, c'est l'amitié.</p>
-            <a href="https://discord.gg/b5ZunqKzbv" class="btn btn-pulse" target="_blank" style="background:var(--grad-primary);color:#fff;border:none;font-size:1.15rem;padding:20px 50px"><i class="fab fa-discord"></i> Rejoindre Spot Québécois</a>
+            <a href="https://discord.gg/wsH8tXQC7V" class="btn btn-pulse" target="_blank" style="background:var(--grad-primary);color:#fff;border:none;font-size:1.15rem;padding:20px 50px"><i class="fab fa-discord"></i> Rejoindre Spot Québécois</a>
         </div></div>
     </section>
     <footer><div class="container">
@@ -543,7 +553,7 @@
                 <h4>À propos</h4>
                 <p>Spot Québécois est une communauté dédiée aux joueurs et passionnés du Québec qui recherchent un environnement structuré, accueillant et professionnel, tout en conservant une ambiance détendue et authentique.</p>
                 <div class="social-links">
-                    <a href="https://discord.gg/b5ZunqKzbv" target="_blank" rel="noopener noreferrer" title="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="https://discord.gg/wsH8tXQC7V" target="_blank" rel="noopener noreferrer" title="Discord"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -572,16 +582,17 @@
                 <h4>Conception</h4>
                 <p>Site web conçu et développé avec passion pour la communauté québécoise.</p>
                 <div style="display:flex;align-items:center;gap:15px;margin-top:25px">
-                    <img src="https://cdn.discordapp.com/avatars/1281784488854159421/608fbe0e316e417b5e83539ef8555255.webp?size=1024" alt="Jacobin Babouain" style="width:50px;height:50px;border-radius:50%;border:2px solid rgba(255,117,24,.4)">
+                    <img src="https://cdn.discordapp.com/avatars/1281784488854159421/c789c205761837e499f3eacd89b0e17a.webp?size=1024" alt="Jacobin Babouain" style="width:50px;height:50px;border-radius:50%;border:2px solid rgba(255,117,24,.4)">
                     <div>
                         <p style="margin:0;font-weight:700;color:var(--blanc)">Jacobin Babouain</p>
                         <p style="margin:0;font-size:.9rem;color:var(--gris)">Développeur Web</p>
                     </div>
                 </div>
+                <a href="https://discord.com/users/1281784488854159421" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:.85rem;color:var(--primary-light);text-decoration:none"><i class="fab fa-discord"></i> @jacobin904 <i class="fas fa-arrow-up-right-from-square" style="font-size:.75rem"></i></a>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2026 Spot Québécois. Tous droits réservés. | 🎃 Édition Halloween conçue avec <i class="fas fa-heart" style="color:var(--primary)"></i> par Jacobin Babouain</p>
+            <p>&copy; 2026 Spot Québécois. Tous droits réservés. | Édition Halloween conçue avec <i class="fas fa-heart" style="color:var(--primary)"></i> par Jacobin Babouain</p>
         </div>
     </div></footer>
     <button class="fab-menu" id="fabMenu" aria-label="Navigation rapide"><i class="fas fa-compass"></i></button>
@@ -589,7 +600,7 @@
     <div class="quicknav" id="quicknav">
         <div class="quicknav-grab"></div>
         <div class="quicknav-header">
-            <span>Navigation rapide 🎃</span>
+            <span>Navigation rapide <i class="fas fa-ghost" style="margin-left:6px"></i></span>
             <button class="quicknav-close" id="quicknavClose" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
         </div>
         <nav class="quicknav-links">
@@ -652,11 +663,10 @@ const TITLE_TEXT=titleEl.getAttribute('data-text')||'SPOT QUÉBÉCOIS';
     setTimeout(()=>titleEl.classList.add('done'),600+charIndex*45+800);
 })();
 const subEl=document.getElementById('heroSub');
-const SUB_TEXT='JASER • JOUER • CONNECTER • 100% D\'ICI';
+const SUB_TEXT='JASER \u2022 JOUER \u2022 CONNECTER \u2022 100% D\'ICI';
 let twI=0;
 function typeWriter(){if(twI<=SUB_TEXT.length){subEl.innerHTML=SUB_TEXT.slice(0,twI)+'<span class="tw-cursor"></span>';twI++;setTimeout(typeWriter,70)}else{subEl.innerHTML=SUB_TEXT}}
 setTimeout(typeWriter,1800);
-/* ===== BRAISES FLOTTANTES (Halloween) ===== */
 const canvas=document.getElementById('emberCanvas'),ctx=canvas.getContext('2d');
 let embers=[];
 const EMBER_COLORS=['255,117,24','255,154,77','139,92,246','255,217,160'];
@@ -687,7 +697,6 @@ function drawE(){
 }
 function loopE(){drawE();requestAnimationFrame(loopE)}
 loopE();
-/* ===== SPOTLIGHT CARTES ===== */
 document.querySelectorAll('.feature-card').forEach(card=>{
     card.addEventListener('mousemove',e=>{
         const r=card.getBoundingClientRect();
@@ -695,7 +704,6 @@ document.querySelectorAll('.feature-card').forEach(card=>{
         card.style.setProperty('--my',(e.clientY-r.top)+'px');
     });
 });
-/* ===== REVEAL & SPY ===== */
 const allReveal=document.querySelectorAll('.reveal,.reveal-scale,.stagger');
 const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')})},{threshold:.1});
 allReveal.forEach(el=>revObs.observe(el));
@@ -705,9 +713,7 @@ sects.forEach((s)=>{const d=document.createElement('div');d.className='dot';d.ti
 const dots=dotsC.querySelectorAll('.dot');
 const spyObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const idx=[...sects].indexOf(e.target);dots.forEach((d,i)=>d.classList.toggle('active',i===idx));document.querySelectorAll('.nav-link').forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}})},{threshold:.3});
 sects.forEach(s=>spyObs.observe(s));
-/* ===== FAQ ===== */
 document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-question').addEventListener('click',()=>{const a=item.classList.contains('active');document.querySelectorAll('.faq-item').forEach(o=>o.classList.remove('active'));if(!a)item.classList.add('active')})});
-/* ===== MENU ===== */
 const hamburger=document.getElementById('hamburger'),navLinks=document.getElementById('navLinks');
 hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');navLinks.classList.toggle('open')});
 navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hamburger.classList.remove('active');navLinks.classList.remove('open')}));
