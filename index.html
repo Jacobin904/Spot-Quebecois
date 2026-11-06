@@ -16,7 +16,7 @@
     <meta property="og:image" content="https://media.discordapp.net/attachments/1529112503143891088/1529480994170867823/Design_sans_titre__1_-removebg-preview.png?ex=6a64baad&is=6a63692d&hm=f1da1c0416c33ab8131a9cebe72c6a5ac3d228ba651fb7c47ae7497525b17553&=&format=webp&quality=lossless">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://media.discordapp.net/attachments/1529112503143891088/1529480994170867823/Design_sans_titre__1_-removebg-preview.png?ex=6a64baad&is=6a63692d&hm=f1da1c0416c33ab8131a9cebe72c6a5ac3d228ba651fb7c47ae7497525b17553&=&format=webp&quality=lossless">
-    <meta name="theme-color" content="#0a1929">
+    <meta name="theme-color" content="#0a1428">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
@@ -29,7 +29,6 @@
             --grad-noel:linear-gradient(135deg,#c8102e 0%,#0d5016 100%);
             --grad-or:linear-gradient(135deg,#ffd700 0%,#d4af37 100%);
             --grad-primary:linear-gradient(135deg,#c8102e 0%,#8b0a1f 100%);
-            --grad-rouge:linear-gradient(135deg,#e83a5a 0%,#c8102e 100%);
             --danger:#ef4444;--warning:#f59e0b;--success:#22c55e;
         }
         *{margin:0;padding:0;box-sizing:border-box}
@@ -83,6 +82,21 @@
         .hamburger.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+        /* ===== VINYLE MUSICAL ===== */
+        .vinyl-wrap{position:fixed;left:-120px;top:50%;transform:translateY(-50%);z-index:998;width:180px;height:180px;cursor:pointer;transition:left .45s cubic-bezier(.4,0,.2,1)}
+        .vinyl-wrap:hover{left:-64px}
+        .vinyl-disc{width:180px;height:180px;border-radius:50%;background:repeating-radial-gradient(circle at 50% 50%,#0b0b0e 0 2px,#17171c 2px 4px);box-shadow:0 10px 40px rgba(0,0,0,.65),0 0 25px rgba(200,16,46,.25);position:relative;animation:vinylSpin 5s linear infinite}
+        .vinyl-disc::after{content:'';position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.09) 50%,transparent 58%)}
+        @keyframes vinylSpin{to{transform:rotate(360deg)}}
+        .vinyl-label{position:absolute;inset:55px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e83a5a,#8b0a1f 72%);display:flex;align-items:center;justify-content:center;color:var(--or-clair);font-size:1.3rem;box-shadow:inset 0 0 14px rgba(0,0,0,.55);text-shadow:0 0 10px rgba(255,215,0,.6)}
+        .vinyl-hole{position:absolute;inset:84px;border-radius:50%;background:var(--nuit-0);box-shadow:inset 0 0 4px #000}
+        .vinyl-tip{position:absolute;left:78px;top:50%;transform:translateY(-50%) translateX(-10px);background:rgba(10,20,40,.96);border:1px solid rgba(212,175,55,.45);border-radius:12px;padding:12px 18px;min-width:200px;opacity:0;pointer-events:none;transition:all .35s;backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(0,0,0,.55)}
+        .vinyl-wrap:hover .vinyl-tip{opacity:1;transform:translateY(-50%) translateX(0)}
+        .vinyl-tip strong{display:block;color:var(--or-clair);font-size:.95rem;font-weight:700}
+        .vinyl-tip span{display:block;color:var(--gris);font-size:.85rem;margin-top:2px}
+        .vinyl-tip em{display:block;color:var(--gris-2);font-size:.72rem;font-style:normal;margin-top:8px;display:flex;align-items:center;gap:6px}
+        .vinyl-tip em i{color:var(--success)}
+        @media(max-width:768px){.vinyl-wrap{left:-132px}.vinyl-wrap:hover{left:-90px}}
         /* ===== HERO NOËL ===== */
         .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:180px 20px 200px;position:relative;overflow:hidden;background:linear-gradient(180deg,#0a1428 0%,#0d1f3d 60%,#122a52 100%)}
         .star{position:absolute;top:100px;right:10%;width:140px;height:140px;z-index:0;animation:starGlow 3s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(255,215,0,.6))}
@@ -149,7 +163,6 @@
         .status-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:20px}
         .status-item{background:rgba(10,20,40,.6);padding:15px;border-radius:12px;border:1px solid var(--border);color:var(--gris);font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px}
         .status-item i{color:var(--primary)}
-        /* ===== SOUTIEN ===== */
         .resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;position:relative;z-index:1}
         .resource-card{background:rgba(13,31,61,.65);border:1px solid var(--border);border-radius:20px;padding:32px;transition:all .4s;position:relative;overflow:hidden;text-decoration:none;display:block}
         .resource-card::after{content:'\f004';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:18px;right:22px;font-size:1rem;opacity:.5;color:var(--primary-light)}
@@ -165,7 +178,6 @@
         .support-note h4{color:var(--blanc);font-size:1.3rem;margin-bottom:10px;display:flex;align-items:center;gap:12px}
         .support-note p{color:var(--gris);line-height:1.8;font-size:1rem}
         .warning-text{margin-top:14px;font-size:.9rem;color:var(--warning);display:flex;align-items:center;gap:8px;font-weight:600}
-        /* ===== PARCOURS ===== */
         .milestones{max-width:900px;margin:0 auto;position:relative;padding-left:44px;z-index:1}
         .milestones::before{content:'';position:absolute;left:14px;top:8px;bottom:8px;width:3px;background:linear-gradient(180deg,var(--primary),var(--or));border-radius:3px;box-shadow:0 0 15px rgba(200,16,46,.3)}
         .milestone-item{position:relative;margin-bottom:45px}
@@ -176,7 +188,6 @@
         .milestone-card h3{font-size:1.45rem;color:var(--blanc);margin-bottom:10px;font-weight:800;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
         .milestone-card h3 i{color:var(--primary)}
         .milestone-card p{color:var(--gris);line-height:1.8}
-        /* ===== RÈGLES ===== */
         .rules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:30px;position:relative;z-index:1}
         .rule-card{background:rgba(13,31,61,.65);padding:40px;border-radius:24px;border-left:6px solid var(--primary);border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);transition:all .5s;position:relative;overflow:hidden}
         .rule-card .rule-num{position:absolute;top:15px;right:25px;font-family:'Mountains of Christmas',cursive;font-size:4.5rem;color:rgba(255,255,255,.06);line-height:1;transition:all .5s}
@@ -195,14 +206,12 @@
         .sanction-item:nth-child(4)::before,.sanction-item:nth-child(5)::before{background:var(--danger)}
         .sanction-item h4{color:var(--blanc);margin-bottom:10px;font-size:1.2rem}
         .sanction-item p{color:var(--gris);font-size:1rem;line-height:1.7}
-        /* ===== PARTENARIATS ===== */
         .cond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;position:relative;z-index:1}
         .cond-card{background:rgba(13,31,61,.65);border:1px solid var(--border);border-radius:20px;padding:32px;text-align:center;transition:all .4s}
         .cond-card:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.45);box-shadow:0 20px 50px rgba(0,0,0,.5)}
         .cond-card .cond-ico{font-size:2.2rem;margin-bottom:16px;display:inline-block;color:var(--or)}
         .cond-card h4{color:var(--blanc);font-size:1.2rem;margin-bottom:12px}
         .cond-card p{color:var(--gris);font-size:.98rem;line-height:1.7}
-        /* ===== ÉQUIPE ===== */
         .team-section{background:linear-gradient(180deg,var(--nuit-1),var(--nuit-0))}
         .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:35px;max-width:1200px;margin:0 auto;position:relative;z-index:1}
         .team-card{background:rgba(13,31,61,.65);border-radius:28px;padding:40px;text-align:center;border:1px solid var(--border);backdrop-filter:blur(15px);transition:all .5s;position:relative;overflow:hidden}
@@ -217,7 +226,6 @@
         .team-card p{color:var(--gris);line-height:1.8}
         .team-link{display:inline-flex;align-items:center;gap:8px;margin-top:15px;font-size:.95rem;color:var(--or-clair);text-decoration:none;font-weight:600;transition:all .3s}
         .team-link:hover{color:var(--or);gap:12px}
-        /* ===== FAQ ===== */
         .faq-container{max-width:850px;margin:0 auto;position:relative;z-index:1}
         .faq-item{background:rgba(13,31,61,.65);border-radius:20px;margin-bottom:25px;border:1px solid var(--border);overflow:hidden;transition:all .5s;backdrop-filter:blur(10px)}
         .faq-item:hover{border-color:var(--border-primary);box-shadow:0 15px 50px rgba(200,16,46,.2)}
@@ -229,7 +237,6 @@
         .faq-answer a{color:var(--or-clair);text-decoration:underline;text-underline-offset:3px}
         .faq-answer a:hover{color:var(--or)}
         .faq-item.active .faq-answer{max-height:600px;padding:0 35px 35px 35px}
-        /* ===== CTA ===== */
         .cta{background:radial-gradient(ellipse at center,rgba(200,16,46,.25),transparent 70%),radial-gradient(ellipse at 20% 80%,rgba(212,175,55,.15),transparent 60%);text-align:center;padding:150px 0;position:relative;overflow:hidden}
         .cta h2{font-size:4.2rem;margin-bottom:30px;font-weight:700;font-family:'Mountains of Christmas',cursive;letter-spacing:3px;background:linear-gradient(180deg,#fff 0%,var(--or) 50%,var(--or-clair) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradShift 4s ease infinite;filter:drop-shadow(0 0 20px rgba(200,16,46,.3))}
         .cta p{font-size:1.4rem;max-width:800px;margin:0 auto 60px;color:var(--gris);line-height:2}
@@ -314,6 +321,20 @@
     </div>
     <div class="scroll-progress" id="scrollProgress"></div>
     <canvas id="snowCanvas"></canvas>
+
+    <!-- ===== VINYLE MUSICAL (gauche, 1/3 visible) ===== -->
+    <div class="vinyl-wrap" id="vinylWrap" role="button" aria-label="Lecteur de musique de Noël" tabindex="0">
+        <div class="vinyl-disc" id="vinylDisc">
+            <div class="vinyl-label"><i class="fas fa-snowflake"></i></div>
+            <div class="vinyl-hole"></div>
+        </div>
+        <div class="vinyl-tip">
+            <strong id="vinylTitre">—</strong>
+            <span id="vinylArtiste">—</span>
+            <em id="vinylEtat"><i class="fas fa-circle-play"></i> Clique pour activer le son</em>
+        </div>
+    </div>
+
     <header id="header">
         <div class="container"><nav>
             <a href="#" class="logo"><img src="https://cdn.discordapp.com/icons/1529109338013171713/ed4ba1a7238911168293905e106dd335.webp?size=1024" alt="Logo"><h1>Spot Québécois</h1></a>
@@ -331,14 +352,12 @@
         </nav></div>
     </header>
     <section class="hero" id="accueil">
-        <!-- Guirlande lumineuse -->
         <div class="light-garland">
             <div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div>
             <div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div>
             <div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div>
             <div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div>
         </div>
-        <!-- Étoile de Bethléem SVG -->
         <svg class="star" viewBox="0 0 200 200" aria-hidden="true">
             <defs>
                 <radialGradient id="starGrad" cx="50%" cy="50%" r="50%">
@@ -346,31 +365,22 @@
                     <stop offset="40%" stop-color="#ffd700"/>
                     <stop offset="100%" stop-color="#d4af37"/>
                 </radialGradient>
-                <filter id="glow">
-                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
+                <filter id="glow"><feGaussianBlur stdDeviation="4" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             </defs>
             <g filter="url(#glow)">
-                <!-- Branche principale horizontale -->
                 <path d="M 100 100 L 200 100 L 100 110 Z" fill="url(#starGrad)"/>
                 <path d="M 100 100 L 0 100 L 100 90 Z" fill="url(#starGrad)"/>
-                <!-- Branche principale verticale -->
                 <path d="M 100 100 L 100 0 L 110 100 Z" fill="url(#starGrad)"/>
                 <path d="M 100 100 L 100 200 L 90 100 Z" fill="url(#starGrad)"/>
-                <!-- Branches diagonales -->
                 <path d="M 100 100 L 170 40 L 115 105 Z" fill="url(#starGrad)" opacity=".7"/>
                 <path d="M 100 100 L 30 40 L 85 105 Z" fill="url(#starGrad)" opacity=".7"/>
                 <path d="M 100 100 L 170 160 L 115 95 Z" fill="url(#starGrad)" opacity=".7"/>
                 <path d="M 100 100 L 30 160 L 85 95 Z" fill="url(#starGrad)" opacity=".7"/>
-                <!-- Centre brillant -->
                 <circle cx="100" cy="100" r="12" fill="#fff"/>
             </g>
         </svg>
-        <!-- Skyline enneigée -->
         <svg class="skyline" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
             <path fill="#081428" d="M0,220 L0,160 L70,160 L70,120 L110,120 L110,160 L160,160 L160,95 L175,95 L175,75 L182,75 L182,55 L186,28 L190,55 L190,75 L197,75 L197,95 L212,95 L212,160 L270,160 L270,130 L320,130 L320,160 L380,160 L380,70 L395,70 L395,50 L402,18 L409,50 L409,70 L424,70 L424,160 L480,160 L480,110 L540,110 L540,160 L600,160 L600,140 L660,140 L660,160 L720,160 L720,90 L760,90 L760,160 L820,160 L820,120 L880,120 L880,160 L940,160 L940,100 L955,100 L955,80 L962,80 L962,100 L977,100 L977,160 L1040,160 L1040,130 L1100,130 L1100,160 L1160,160 L1160,152 Q1200,88 1240,152 L1240,160 L1300,160 L1300,110 L1360,110 L1360,160 L1440,160 L1440,220 Z"/>
-            <!-- Toits enneigés -->
             <path fill="#fff" opacity=".8" d="M70 120 L110 120 L105 118 L90 117 L75 118 Z M160 95 L212 95 L208 93 L190 92 L170 93 Z M380 70 L424 70 L420 68 L400 67 L385 68 Z M720 90 L760 90 L755 88 L740 87 L725 88 Z M1300 110 L1360 110 L1355 108 L1330 107 L1305 108 Z"/>
         </svg>
         <div class="snow-ground"></div>
@@ -483,7 +493,7 @@
                 <div class="milestone-item"><div class="milestone-card">
                     <span class="milestone-date"><i class="fas fa-calendar-day"></i> 25 décembre 2026</span>
                     <h3><i class="fas fa-tree"></i> Édition Noël du site</h3>
-                    <p>Le site web fait peau neuve avec une refonte complète aux couleurs festives. Joyeux Noël à toute la communauté !</p>
+                    <p>Le site web fait peau neuve avec une refonte complète aux couleurs festives, plus un lecteur vinyle musical intégré. Joyeux Noël à toute la communauté !</p>
                 </div></div>
             </div>
         </div>
@@ -651,6 +661,178 @@
     </div>
     <a href="#accueil" class="back-to-top" id="backToTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></a>
 <script>
+/* =====================================================
+   CONFIGURATION MUSIQUE
+   - Pour utiliser TA propre chanson : dépose le fichier
+     mp3 dans le dossier du site (ex: musique/noel.mp3)
+     et change "fichier" ci-dessous. Sinon, une version
+     lofi chill de Jingle Bells est générée automatiquement.
+===================================================== */
+const NOEL_CONFIG = {
+    fichier: "musique/noel-chill.mp3",
+    titre: "Jingle Bells — Lofi Chill",
+    artiste: "Spot Québécois Radio",
+    volume: 0.22   // volume doux (0 = muet, 1 = fort)
+};
+
+/* ===== MOTEUR VINYLE (WebAudio) ===== */
+const Vinyle = (() => {
+    let ctx=null, master=null, buffer=null, loopSrc=null, loopGain=null;
+    let playing=false, unlocked=false, introDone=false;
+    let posBase=0, tBase=0;
+    const wrap=document.getElementById('vinylWrap');
+    const elTitre=document.getElementById('vinylTitre');
+    const elArtiste=document.getElementById('vinylArtiste');
+    const elEtat=document.getElementById('vinylEtat');
+    elTitre.textContent=NOEL_CONFIG.titre;
+    elArtiste.textContent=NOEL_CONFIG.artiste;
+
+    const m2f=m=>440*Math.pow(2,(m-69)/12);
+
+    /* --- Composition lofi chill générée (Jingle Bells) --- */
+    async function renderLofi(){
+        const sr=44100, Q=60/66, h=Q*2, w=Q*4;
+        const BARS=[
+            {m:[[64,Q],[64,Q],[64,h]],c:'C'},{m:[[64,Q],[64,Q],[64,h]],c:'C'},
+            {m:[[64,Q],[67,Q],[60,Q],[62,Q],[64,h]],c:'C'},{m:[[65,Q],[65,Q],[65,Q],[65,Q]],c:'F'},
+            {m:[[65,Q],[64,Q],[64,Q],[64,Q]],c:'F'},{m:[[64,Q],[62,Q],[62,Q],[64,Q]],c:'G'},
+            {m:[[62,h],[67,h]],c:'G'},
+            {m:[[64,Q],[64,Q],[64,h]],c:'C'},{m:[[64,Q],[64,Q],[64,h]],c:'C'},
+            {m:[[64,Q],[67,Q],[60,Q],[62,Q],[64,h]],c:'C'},{m:[[65,Q],[65,Q],[65,Q],[65,Q]],c:'F'},
+            {m:[[65,Q],[64,Q],[64,Q],[64,Q]],c:'F'},{m:[[67,Q],[67,Q],[65,Q],[62,Q]],c:'G'},
+            {m:[[60,w]],c:'C'}
+        ];
+        const CH={C:[48,55,64],F:[53,60,65],G:[55,62,67]};
+        let total=0; BARS.forEach(b=>{let d=0;b.m.forEach(n=>d+=n[1]);b.len=d;total+=d;});
+        const dur=total+Q*2;
+        const off=new OfflineAudioContext(2, Math.ceil(sr*dur), sr);
+        const out=off.createGain(); out.gain.value=0.9;
+        const lp=off.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=5200;
+        lp.connect(out); out.connect(off.destination);
+        const nb=off.createBuffer(1,sr,sr); const nd=nb.getChannelData(0);
+        for(let i=0;i<nd.length;i++)nd[i]=Math.random()*2-1;
+        function env(g,t,a,peak,dec){g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(peak,t+a);g.gain.exponentialRampToValueAtTime(0.0001,t+dec);}
+        function voice(t,midi,d,type,vol,fCut){
+            const o=off.createOscillator();o.type=type;o.frequency.value=m2f(midi);
+            const g=off.createGain();env(g,t,0.02,vol,d+0.25);
+            let n=o;
+            if(fCut){const f=off.createBiquadFilter();f.type='lowpass';f.frequency.value=fCut;o.connect(f);n=f;}
+            n.connect(g);g.connect(lp);o.start(t);o.stop(t+d+0.4);
+        }
+        function noise(t,d,vol,type,freq){
+            const s=off.createBufferSource();s.buffer=nb;
+            const f=off.createBiquadFilter();f.type=type;f.frequency.value=freq;
+            const g=off.createGain();env(g,t,0.005,vol,d);
+            s.connect(f);f.connect(g);g.connect(lp);s.start(t);s.stop(t+d+0.05);
+        }
+        function kick(t){
+            const o=off.createOscillator();o.type='sine';
+            o.frequency.setValueAtTime(120,t);o.frequency.exponentialRampToValueAtTime(45,t+0.12);
+            const g=off.createGain();env(g,t,0.005,0.28,0.16);
+            o.connect(g);g.connect(out);o.start(t);o.stop(t+0.25);
+        }
+        let t=0;
+        BARS.forEach(b=>{
+            const ch=CH[b.c];
+            ch.forEach(m=>voice(t,m,b.len,'sine',0.045));            // pad doux
+            voice(t,ch[0]-12,Q*1.8,'sine',0.13);                     // basse
+            voice(t+Q*2,ch[0]-12,Q*1.5,'sine',0.10);
+            kick(t); kick(t+Q*2);                                    // kick chill
+            noise(t+Q,0.14,0.07,'bandpass',1800);                    // snare douce
+            noise(t+Q*3,0.14,0.06,'bandpass',1800);
+            for(let i=0;i<4;i++)noise(t+Q*0.5*i,0.03,0.028,'highpass',7000); // hats
+            let cur=t;
+            b.m.forEach(n=>{voice(cur,n[0],n[1],'triangle',0.16,1500);cur+=n[1];}); // mélodie
+            t+=b.len;
+        });
+        for(let x=0;x<dur;x+=0.09+Math.random()*0.22)noise(x,0.015,0.010+Math.random()*0.010,'highpass',4000); // crackle vinyle
+        return off.startRendering();
+    }
+
+    async function buildBuffer(){
+        try{
+            const r=await fetch(NOEL_CONFIG.fichier);
+            if(r.ok){buffer=await ctx.decodeAudioData(await r.arrayBuffer());return;}
+        }catch(e){}
+        buffer=await renderLofi();   // fallback généré
+    }
+
+    function curPos(){return playing?(posBase+(ctx.currentTime-tBase))%buffer.duration:posBase;}
+
+    function startLoop(when,from){
+        loopSrc=ctx.createBufferSource();
+        loopSrc.buffer=buffer;loopSrc.loop=true;
+        loopGain=ctx.createGain();loopGain.gain.setValueAtTime(0.0001,when);
+        loopGain.gain.exponentialRampToValueAtTime(1,when+1.2);
+        loopSrc.connect(loopGain);loopGain.connect(master);
+        loopSrc.start(when,from%buffer.duration);
+        playing=true;posBase=from%buffer.duration;tBase=when;
+        setEtat(true);
+    }
+
+    /* --- Effet scratch / disque qui bugue (avance-recule) --- */
+    function scratchThenPlay(){
+        const seq=[{d:1,t:.5},{d:-1,t:.32},{d:1,t:.42},{d:-1,t:.26},{d:1,t:.6}];
+        let t=ctx.currentTime+0.06, pos=buffer.duration*0.22;
+        master.gain.cancelScheduledValues(t);
+        master.gain.setValueAtTime(NOEL_CONFIG.volume,t);
+        seq.forEach(s=>{
+            const n=ctx.createBufferSource();n.buffer=buffer;n.playbackRate.value=s.d;
+            const g=ctx.createGain();
+            g.gain.setValueAtTime(0.0001,t);
+            g.gain.exponentialRampToValueAtTime(0.8,t+0.02);
+            g.gain.exponentialRampToValueAtTime(0.0001,t+s.t);
+            n.connect(g);g.connect(master);
+            n.start(t,Math.min(Math.max(pos,0.05),buffer.duration-0.05),s.t);
+            pos=Math.min(Math.max(pos+(s.d>0?s.t:-s.t),0),buffer.duration);
+            t+=s.t+0.05;
+        });
+        introDone=true;
+        startLoop(t+0.12,pos);
+    }
+
+    function setEtat(on){
+        elEtat.innerHTML=on
+            ? '<i class="fas fa-circle-play"></i> En lecture — clique pour mettre en pause'
+            : '<i class="fas fa-circle-pause"></i> En pause — clique pour réécouter';
+    }
+
+    function pause(){
+        if(!playing)return;
+        posBase=curPos();
+        try{loopSrc.stop();}catch(e){}
+        loopSrc=null;playing=false;setEtat(false);
+    }
+    function resume(){
+        if(playing)return;
+        if(!introDone){scratchThenPlay();return;}
+        startLoop(ctx.currentTime+0.05,posBase);
+    }
+
+    async function unlock(){
+        if(unlocked)return;
+        unlocked=true;
+        ctx=new (window.AudioContext||window.webkitAudioContext)();
+        master=ctx.createGain();master.gain.value=NOEL_CONFIG.volume;
+        master.connect(ctx.destination);
+        await ctx.resume();
+        await buildBuffer();
+        scratchThenPlay();   // le disque "bugue" 2-3 fois puis joue normalement
+    }
+
+    wrap.addEventListener('click',()=>{
+        if(!unlocked){unlock();return;}
+        playing?pause():resume();
+    });
+    wrap.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();wrap.click();}});
+    // Premier geste de l'utilisateur = déblocage du son (règle des navigateurs)
+    window.addEventListener('pointerdown',unlock,{once:true});
+    window.addEventListener('keydown',unlock,{once:true});
+
+    return {unlock};
+})();
+
+/* ===== PRELOADER ===== */
 (function(){
     const percentEl=document.getElementById('preloaderPercent');
     const barFill=document.getElementById('preloaderBarFill');
@@ -702,9 +884,8 @@ const SUB_TEXT='JASER \u2022 JOUER \u2022 CONNECTER \u2022 100% D\'ICI';
 let twI=0;
 function typeWriter(){if(twI<=SUB_TEXT.length){subEl.innerHTML=SUB_TEXT.slice(0,twI)+'<span class="tw-cursor"></span>';twI++;setTimeout(typeWriter,70)}else{subEl.innerHTML=SUB_TEXT}}
 setTimeout(typeWriter,1800);
-
-/* ===== NEIGE QUI TOMBE ===== */
-const canvas=document.getElementById('snowCanvas'),ctx=canvas.getContext('2d');
+/* ===== NEIGE ===== */
+const canvas=document.getElementById('snowCanvas'),ctx2=canvas.getContext('2d');
 let snowflakes=[];
 function resizeC(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
 resizeC();window.addEventListener('resize',resizeC);
@@ -712,39 +893,27 @@ function initS(){
     snowflakes=[];
     const c=Math.min(120,Math.floor(window.innerWidth/14));
     for(let i=0;i<c;i++){
-        snowflakes.push({
-            x:Math.random()*canvas.width,
-            y:Math.random()*canvas.height,
-            r:Math.random()*3+.5,
-            vy:Math.random()*.8+.3,
-            vx:(Math.random()-.5)*.3,
-            op:Math.random()*.6+.3,
-            phase:Math.random()*Math.PI*2
-        });
+        snowflakes.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*3+.5,vy:Math.random()*.8+.3,vx:(Math.random()-.5)*.3,op:Math.random()*.6+.3,phase:Math.random()*Math.PI*2});
     }
 }
 initS();
-let t=0;
+let tS=0;
 function drawS(){
-    t+=.01;
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+    tS+=.01;
+    ctx2.clearRect(0,0,canvas.width,canvas.height);
     snowflakes.forEach(f=>{
-        f.y+=f.vy;
-        f.x+=f.vx+Math.sin(t+f.phase)*.3;
+        f.y+=f.vy;f.x+=f.vx+Math.sin(tS+f.phase)*.3;
         if(f.y>canvas.height){f.y=-10;f.x=Math.random()*canvas.width}
         if(f.x<-10)f.x=canvas.width+10;if(f.x>canvas.width+10)f.x=-10;
-        ctx.beginPath();
-        ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
-        ctx.fillStyle=`rgba(255,255,255,${f.op})`;
-        ctx.shadowColor='rgba(255,255,255,.8)';
-        ctx.shadowBlur=6;
-        ctx.fill();
-        ctx.shadowBlur=0;
+        ctx2.beginPath();ctx2.arc(f.x,f.y,f.r,0,Math.PI*2);
+        ctx2.fillStyle=`rgba(255,255,255,${f.op})`;
+        ctx2.shadowColor='rgba(255,255,255,.8)';ctx2.shadowBlur=6;
+        ctx2.fill();ctx2.shadowBlur=0;
     });
     requestAnimationFrame(drawS);
 }
 drawS();
-
+/* ===== DIVERS ===== */
 document.querySelectorAll('.feature-card').forEach(card=>{
     card.addEventListener('mousemove',e=>{
         const r=card.getBoundingClientRect();
