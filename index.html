@@ -22,7 +22,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Cormorant+Garamond:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
         :root {
             --nuit-0:#0a1428;--nuit-1:#0d1f3d;--nuit-2:#122a52;--nuit-3:#1a3668;
-            --primary:#c8102e;--primary-dark:#8b0a1f;--primary-light:#e83a5a;--rose-noel:#ffb3c1;
+            --primary:#c8102e;--primary-dark:#8b0a1f;--primary-light:#e83a5a;
             --vert:#0d5016;--vert-clair:#1d7044;--or:#d4af37;--or-clair:#ffd700;
             --blanc:#f5f5f5;--blanc-2:#e8eef7;--gris:#94a3b8;--gris-2:#64748b;
             --border:rgba(255,255,255,.10);--border-primary:rgba(200,16,46,.35);
@@ -82,20 +82,36 @@
         .hamburger.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
         .hamburger.active span:nth-child(2){opacity:0}
         .hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-        /* ===== VINYLE MUSICAL ===== */
+        /* ===== VINYLE ===== */
         .vinyl-wrap{position:fixed;left:-120px;top:50%;transform:translateY(-50%);z-index:998;width:180px;height:180px;cursor:pointer;transition:left .45s cubic-bezier(.4,0,.2,1)}
         .vinyl-wrap:hover{left:-64px}
-        .vinyl-disc{width:180px;height:180px;border-radius:50%;background:repeating-radial-gradient(circle at 50% 50%,#0b0b0e 0 2px,#17171c 2px 4px);box-shadow:0 10px 40px rgba(0,0,0,.65),0 0 25px rgba(200,16,46,.25);position:relative;animation:vinylSpin 5s linear infinite}
-        .vinyl-disc::after{content:'';position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.09) 50%,transparent 58%)}
+        .vinyl-disc{width:180px;height:180px;border-radius:50%;position:relative;animation:vinylSpin 5s linear infinite;box-shadow:0 10px 40px rgba(0,0,0,.65),0 0 25px rgba(200,16,46,.25),inset 0 0 0 5px #0b0b0e}
         @keyframes vinylSpin{to{transform:rotate(360deg)}}
-        .vinyl-label{position:absolute;inset:55px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e83a5a,#8b0a1f 72%);display:flex;align-items:center;justify-content:center;color:var(--or-clair);font-size:1.3rem;box-shadow:inset 0 0 14px rgba(0,0,0,.55);text-shadow:0 0 10px rgba(255,215,0,.6)}
-        .vinyl-hole{position:absolute;inset:84px;border-radius:50%;background:var(--nuit-0);box-shadow:inset 0 0 4px #000}
-        .vinyl-tip{position:absolute;left:78px;top:50%;transform:translateY(-50%) translateX(-10px);background:rgba(10,20,40,.96);border:1px solid rgba(212,175,55,.45);border-radius:12px;padding:12px 18px;min-width:200px;opacity:0;pointer-events:none;transition:all .35s;backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(0,0,0,.55)}
+        .vinyl-face{position:absolute;inset:5px;border-radius:50%;background:center/cover no-repeat,#111}
+        .vinyl-grooves{position:absolute;inset:5px;border-radius:50%;background:repeating-radial-gradient(circle at 50% 50%,rgba(0,0,0,.55) 0 2px,rgba(255,255,255,.04) 2px 4px);opacity:.5;pointer-events:none}
+        .vinyl-sheen{position:absolute;inset:5px;border-radius:50%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.14) 50%,transparent 58%);pointer-events:none}
+        .vinyl-hole{position:absolute;inset:84px;border-radius:50%;background:var(--nuit-0);box-shadow:inset 0 0 4px #000,0 0 0 4px rgba(255,255,255,.15);z-index:2}
+        .vinyl-tip{position:absolute;left:78px;top:50%;transform:translateY(-50%) translateX(-10px);background:rgba(10,20,40,.96);border:1px solid rgba(212,175,55,.45);border-radius:12px;padding:12px 18px;min-width:230px;max-width:280px;opacity:0;pointer-events:none;transition:all .35s;backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(0,0,0,.55)}
         .vinyl-wrap:hover .vinyl-tip{opacity:1;transform:translateY(-50%) translateX(0)}
         .vinyl-tip strong{display:block;color:var(--or-clair);font-size:.95rem;font-weight:700}
         .vinyl-tip span{display:block;color:var(--gris);font-size:.85rem;margin-top:2px}
+        .vinyl-tip .tip-line{display:block;color:var(--blanc-2);font-size:.85rem;font-style:italic;margin-top:8px;border-left:2px solid var(--or);padding-left:8px;min-height:1.2em}
         .vinyl-tip em{display:block;color:var(--gris-2);font-size:.72rem;font-style:normal;margin-top:8px;display:flex;align-items:center;gap:6px}
         .vinyl-tip em i{color:var(--success)}
+        /* ===== PANNEAU PAROLES ===== */
+        .lyrics-btn{position:fixed;left:18px;bottom:24px;z-index:998;width:52px;height:52px;border-radius:50%;border:1px solid rgba(212,175,55,.5);background:rgba(10,20,40,.9);color:var(--or-clair);font-size:1.15rem;cursor:pointer;transition:all .3s;box-shadow:0 8px 25px rgba(0,0,0,.5)}
+        .lyrics-btn:hover{transform:scale(1.1);border-color:var(--or);box-shadow:0 8px 30px rgba(212,175,55,.3)}
+        .lyrics-panel{position:fixed;left:0;top:0;bottom:0;width:340px;max-width:88vw;z-index:1005;background:rgba(10,20,40,.97);backdrop-filter:blur(14px);border-right:1px solid rgba(212,175,55,.35);transform:translateX(-105%);transition:transform .45s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:20px 0 60px rgba(0,0,0,.6)}
+        .lyrics-panel.open{transform:translateX(0)}
+        .lyrics-head{padding:22px 22px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+        .lyrics-head strong{display:block;color:var(--or-clair);font-size:1.05rem}
+        .lyrics-head span{display:block;color:var(--gris);font-size:.85rem}
+        .lyrics-close{background:rgba(255,255,255,.08);border:1px solid var(--border);color:var(--blanc);width:34px;height:34px;border-radius:50%;cursor:pointer;flex-shrink:0}
+        .lyrics-list{overflow-y:auto;padding:18px 22px 40px;flex:1}
+        .lyrics-list p{color:var(--gris-2);font-size:.95rem;line-height:1.7;margin-bottom:12px;transition:all .3s;border-left:2px solid transparent;padding-left:10px}
+        .lyrics-list p.past{color:var(--gris)}
+        .lyrics-list p.now{color:var(--or-clair);font-weight:700;border-left-color:var(--or);background:rgba(212,175,55,.08);border-radius:0 8px 8px 0}
+        @media(max-width:900px){.lyrics-btn{bottom:92px}}
         @media(max-width:768px){.vinyl-wrap{left:-132px}.vinyl-wrap:hover{left:-90px}}
         /* ===== HERO NOËL ===== */
         .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:180px 20px 200px;position:relative;overflow:hidden;background:linear-gradient(180deg,#0a1428 0%,#0d1f3d 60%,#122a52 100%)}
@@ -322,17 +338,28 @@
     <div class="scroll-progress" id="scrollProgress"></div>
     <canvas id="snowCanvas"></canvas>
 
-    <!-- ===== VINYLE MUSICAL (gauche, 1/3 visible) ===== -->
+    <!-- ===== VINYLE ===== -->
     <div class="vinyl-wrap" id="vinylWrap" role="button" aria-label="Lecteur de musique de Noël" tabindex="0">
         <div class="vinyl-disc" id="vinylDisc">
-            <div class="vinyl-label"><i class="fas fa-snowflake"></i></div>
+            <div class="vinyl-face" id="vinylFace"></div>
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-sheen"></div>
             <div class="vinyl-hole"></div>
         </div>
         <div class="vinyl-tip">
             <strong id="vinylTitre">—</strong>
             <span id="vinylArtiste">—</span>
+            <span class="tip-line" id="vinylLigne"></span>
             <em id="vinylEtat"><i class="fas fa-circle-play"></i> Clique pour activer le son</em>
         </div>
+    </div>
+    <button class="lyrics-btn" id="lyricsBtn" aria-label="Afficher les paroles"><i class="fas fa-microphone-lines"></i></button>
+    <div class="lyrics-panel" id="lyricsPanel">
+        <div class="lyrics-head">
+            <div><strong id="lyricsTitre">—</strong><span id="lyricsArtiste">—</span></div>
+            <button class="lyrics-close" id="lyricsClose" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+        </div>
+        <div class="lyrics-list" id="lyricsList"></div>
     </div>
 
     <header id="header">
@@ -361,9 +388,7 @@
         <svg class="star" viewBox="0 0 200 200" aria-hidden="true">
             <defs>
                 <radialGradient id="starGrad" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#fff"/>
-                    <stop offset="40%" stop-color="#ffd700"/>
-                    <stop offset="100%" stop-color="#d4af37"/>
+                    <stop offset="0%" stop-color="#fff"/><stop offset="40%" stop-color="#ffd700"/><stop offset="100%" stop-color="#d4af37"/>
                 </radialGradient>
                 <filter id="glow"><feGaussianBlur stdDeviation="4" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             </defs>
@@ -493,7 +518,7 @@
                 <div class="milestone-item"><div class="milestone-card">
                     <span class="milestone-date"><i class="fas fa-calendar-day"></i> 25 décembre 2026</span>
                     <h3><i class="fas fa-tree"></i> Édition Noël du site</h3>
-                    <p>Le site web fait peau neuve avec une refonte complète aux couleurs festives, plus un lecteur vinyle musical intégré. Joyeux Noël à toute la communauté !</p>
+                    <p>Le site web fait peau neuve avec une refonte complète aux couleurs festives, plus un lecteur vinyle musical avec paroles synchronisées. Joyeux Noël à toute la communauté !</p>
                 </div></div>
             </div>
         </div>
@@ -662,56 +687,77 @@
     <a href="#accueil" class="back-to-top" id="backToTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></a>
 <script>
 /* =====================================================
-   CONFIGURATION MUSIQUE
-   - Pour utiliser TA propre chanson : dépose le fichier
-     mp3 dans le dossier du site (ex: musique/noel.mp3)
-     et change "fichier" ci-dessous. Sinon, une version
-     lofi chill de Jingle Bells est générée automatiquement.
+   CONFIGURATION
+   - disqueImage : image affichée sur le vinyle (picture disc)
+   - volume : doux par défaut
+   - fichiers : OPTIONNEL. Si tu as tes propres mp3 (libres de
+     droits), mets-les dans /musique et remplis ce tableau :
+     fichiers:[{url:"musique/track1.mp3",titre:"...",artiste:"...",paroles:["ligne 1","ligne 2"]}]
 ===================================================== */
 const NOEL_CONFIG = {
-    fichier: "musique/noel-chill.mp3",
-    titre: "Jingle Bells — Lofi Chill",
-    artiste: "Spot Québécois Radio",
-    volume: 0.22   // volume doux (0 = muet, 1 = fort)
+    disqueImage: "https://cdn.discordapp.com/icons/1529109338013171713/ed4ba1a7238911168293905e106dd335.webp?size=1024",
+    volume: 0.22,
+    fichiers: []
 };
+document.getElementById('vinylFace').style.backgroundImage = `url("${NOEL_CONFIG.disqueImage}")`;
 
-/* ===== MOTEUR VINYLE (WebAudio) ===== */
-const Vinyle = (() => {
-    let ctx=null, master=null, buffer=null, loopSrc=null, loopGain=null;
-    let playing=false, unlocked=false, introDone=false;
-    let posBase=0, tBase=0;
+/* ===== CHANSONS (mélodies & paroles traditionnelles, domaine public) ===== */
+const CH={C:[48,55,64],F:[53,60,65],G:[55,62,67]};
+const SONGS_DEF=[
+{ titre:"Vive le vent", artiste:"Traditionnel (arr. lofi chill)", tempo:66, style:'chill',
+  bars:[
+   {n:[[64,1],[64,1],[64,2]],c:'C'},{n:[[64,1],[64,1],[64,2]],c:'C'},
+   {n:[[64,1],[67,1],[60,1],[62,1],[64,2]],c:'C'},{n:[[65,1],[65,1],[65,1],[65,1]],c:'F'},
+   {n:[[65,1],[64,1],[64,1],[64,1]],c:'F'},{n:[[64,1],[62,1],[62,1],[64,1]],c:'G'},
+   {n:[[62,2],[67,2]],c:'G'},
+   {n:[[64,1],[64,1],[64,2]],c:'C'},{n:[[64,1],[64,1],[64,2]],c:'C'},
+   {n:[[64,1],[67,1],[60,1],[62,1],[64,2]],c:'C'},{n:[[65,1],[65,1],[65,1],[65,1]],c:'F'},
+   {n:[[65,1],[64,1],[64,1],[64,1]],c:'F'},{n:[[67,1],[67,1],[65,1],[62,1]],c:'G'},
+   {n:[[60,4]],c:'C'}],
+  lyrics:[[0,"Vive le vent,"],[1,"vive le vent,"],[2,"vive le vent d'hiver,"],[3,"qui s'en va sifflant,"],[4,"soufflant dans les grands sapins verts."],[5,"Ô gué ! Joyeux Noël !"],[6,"Des milliers de souhaits !"],[7,"Vive le vent,"],[8,"vive le vent,"],[9,"vive le vent d'hiver,"],[10,"qui s'en va sifflant,"],[11,"soufflant dans les grands sapins verts."],[12,"Vive le vent,"],[13,"d'hiver !"]] },
+{ titre:"Jingle Bells", artiste:"J. Pierpont (1857) — arr. rock doux", tempo:84, style:'rock',
+  bars:[
+   {n:[[64,1],[64,1],[64,2]],c:'C'},{n:[[64,1],[64,1],[64,2]],c:'C'},
+   {n:[[64,1],[67,1],[60,1],[62,1],[64,2]],c:'C'},{n:[[65,1],[65,1],[65,1],[65,1]],c:'F'},
+   {n:[[65,1],[64,1],[64,1],[64,1]],c:'F'},{n:[[64,1],[62,1],[62,1],[64,1]],c:'G'},
+   {n:[[62,2],[67,2]],c:'G'},
+   {n:[[64,1],[64,1],[64,2]],c:'C'},{n:[[64,1],[64,1],[64,2]],c:'C'},
+   {n:[[64,1],[67,1],[60,1],[62,1],[64,2]],c:'C'},{n:[[65,1],[65,1],[65,1],[65,1]],c:'F'},
+   {n:[[65,1],[64,1],[64,1],[64,1]],c:'F'},{n:[[67,1],[67,1],[65,1],[62,1]],c:'G'},
+   {n:[[60,4]],c:'C'}],
+  lyrics:[[0,"Jingle bells, jingle bells,"],[2,"jingle all the way!"],[3,"Oh what fun it is to ride"],[4,"in a one-horse open sleigh,"],[5,"Jingle bells,"],[6,"jingle bells,"],[7,"jingle all the way!"],[8,"Oh what fun it is to ride"],[9,"in a one-horse open sleigh,"],[12,"Oh what fun it is to ride"],[13,"in a one-horse open sleigh!"]] },
+{ titre:"Douce nuit", artiste:"F. Gruber (1818) — arr. boîte à musique", tempo:54, style:'ballad',
+  bars:[
+   {n:[[67,1],[71,1],[67,1],[64,1]],c:'C'},{n:[[67,1],[71,1],[67,1],[64,1]],c:'C'},
+   {n:[[72,1],[72,1],[67,2]],c:'C'},{n:[[72,1],[72,1],[67,2]],c:'C'},
+   {n:[[69,1],[69,1],[72,1],[71,1]],c:'F'},{n:[[69,1],[69,1],[72,1],[71,1]],c:'F'},
+   {n:[[67,1],[71,1],[67,1],[64,1]],c:'C'},{n:[[67,1],[71,1],[67,1],[64,1]],c:'G'},
+   {n:[[72,4]],c:'C'}],
+  lyrics:[[0,"Douce nuit,"],[1,"sainte nuit,"],[2,"dans les cieux,"],[3,"l'astre luit."],[4,"Le mystère annoncé s'accomplit,"],[5,"cet enfant sur la paille endormi,"],[6,"C'est l'amour infini !"]] }
+];
+
+/* ===== MOTEUR AUDIO ===== */
+const Vinyle=(()=>{
+    let ctx=null,master=null,songs=[],cur=0,src=null,gainN=null;
+    let playing=false,unlocked=false,introDone=false,posBase=0,tBase=0;
     const wrap=document.getElementById('vinylWrap');
-    const elTitre=document.getElementById('vinylTitre');
-    const elArtiste=document.getElementById('vinylArtiste');
-    const elEtat=document.getElementById('vinylEtat');
-    elTitre.textContent=NOEL_CONFIG.titre;
-    elArtiste.textContent=NOEL_CONFIG.artiste;
-
+    const elT=document.getElementById('vinylTitre'),elA=document.getElementById('vinylArtiste'),
+          elL=document.getElementById('vinylLigne'),elE=document.getElementById('vinylEtat'),
+          pT=document.getElementById('lyricsTitre'),pA=document.getElementById('lyricsArtiste'),
+          pL=document.getElementById('lyricsList');
     const m2f=m=>440*Math.pow(2,(m-69)/12);
 
-    /* --- Composition lofi chill générée (Jingle Bells) --- */
-    async function renderLofi(){
-        const sr=44100, Q=60/66, h=Q*2, w=Q*4;
-        const BARS=[
-            {m:[[64,Q],[64,Q],[64,h]],c:'C'},{m:[[64,Q],[64,Q],[64,h]],c:'C'},
-            {m:[[64,Q],[67,Q],[60,Q],[62,Q],[64,h]],c:'C'},{m:[[65,Q],[65,Q],[65,Q],[65,Q]],c:'F'},
-            {m:[[65,Q],[64,Q],[64,Q],[64,Q]],c:'F'},{m:[[64,Q],[62,Q],[62,Q],[64,Q]],c:'G'},
-            {m:[[62,h],[67,h]],c:'G'},
-            {m:[[64,Q],[64,Q],[64,h]],c:'C'},{m:[[64,Q],[64,Q],[64,h]],c:'C'},
-            {m:[[64,Q],[67,Q],[60,Q],[62,Q],[64,h]],c:'C'},{m:[[65,Q],[65,Q],[65,Q],[65,Q]],c:'F'},
-            {m:[[65,Q],[64,Q],[64,Q],[64,Q]],c:'F'},{m:[[67,Q],[67,Q],[65,Q],[62,Q]],c:'G'},
-            {m:[[60,w]],c:'C'}
-        ];
-        const CH={C:[48,55,64],F:[53,60,65],G:[55,62,67]};
-        let total=0; BARS.forEach(b=>{let d=0;b.m.forEach(n=>d+=n[1]);b.len=d;total+=d;});
+    function renderSong(def){
+        const sr=44100,Q=60/def.tempo;
+        let total=0;def.bars.forEach(b=>{let d=0;b.n.forEach(n=>d+=n[1]*Q);b.len=d;total+=d;});
         const dur=total+Q*2;
-        const off=new OfflineAudioContext(2, Math.ceil(sr*dur), sr);
-        const out=off.createGain(); out.gain.value=0.9;
-        const lp=off.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=5200;
-        lp.connect(out); out.connect(off.destination);
-        const nb=off.createBuffer(1,sr,sr); const nd=nb.getChannelData(0);
+        const off=new OfflineAudioContext(2,Math.ceil(sr*dur),sr);
+        const out=off.createGain();out.gain.value=0.9;
+        const lp=off.createBiquadFilter();lp.type='lowpass';lp.frequency.value=def.style==='ballad'?6500:5200;
+        lp.connect(out);out.connect(off.destination);
+        const nb=off.createBuffer(1,sr,sr);const nd=nb.getChannelData(0);
         for(let i=0;i<nd.length;i++)nd[i]=Math.random()*2-1;
-        function env(g,t,a,peak,dec){g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(peak,t+a);g.gain.exponentialRampToValueAtTime(0.0001,t+dec);}
+        const env=(g,t,a,p,d)=>{g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(p,t+a);g.gain.exponentialRampToValueAtTime(0.0001,t+d);};
         function voice(t,midi,d,type,vol,fCut){
             const o=off.createOscillator();o.type=type;o.frequency.value=m2f(midi);
             const g=off.createGain();env(g,t,0.02,vol,d+0.25);
@@ -725,112 +771,138 @@ const Vinyle = (() => {
             const g=off.createGain();env(g,t,0.005,vol,d);
             s.connect(f);f.connect(g);g.connect(lp);s.start(t);s.stop(t+d+0.05);
         }
-        function kick(t){
-            const o=off.createOscillator();o.type='sine';
-            o.frequency.setValueAtTime(120,t);o.frequency.exponentialRampToValueAtTime(45,t+0.12);
-            const g=off.createGain();env(g,t,0.005,0.28,0.16);
-            o.connect(g);g.connect(out);o.start(t);o.stop(t+0.25);
-        }
+        function kick(t,v){const o=off.createOscillator();o.type='sine';o.frequency.setValueAtTime(120,t);o.frequency.exponentialRampToValueAtTime(45,t+0.12);const g=off.createGain();env(g,t,0.005,v,0.16);o.connect(g);g.connect(out);o.start(t);o.stop(t+0.25);}
         let t=0;
-        BARS.forEach(b=>{
+        def.bars.forEach(b=>{
             const ch=CH[b.c];
-            ch.forEach(m=>voice(t,m,b.len,'sine',0.045));            // pad doux
-            voice(t,ch[0]-12,Q*1.8,'sine',0.13);                     // basse
-            voice(t+Q*2,ch[0]-12,Q*1.5,'sine',0.10);
-            kick(t); kick(t+Q*2);                                    // kick chill
-            noise(t+Q,0.14,0.07,'bandpass',1800);                    // snare douce
-            noise(t+Q*3,0.14,0.06,'bandpass',1800);
-            for(let i=0;i<4;i++)noise(t+Q*0.5*i,0.03,0.028,'highpass',7000); // hats
-            let cur=t;
-            b.m.forEach(n=>{voice(cur,n[0],n[1],'triangle',0.16,1500);cur+=n[1];}); // mélodie
+            if(def.style==='ballad'){
+                ch.forEach((m,i)=>voice(t+i*Q*0.9,m,b.len,'sine',0.05));          // arpège doux
+                ch.forEach(m=>voice(t,m+12,b.len*0.9,'sine',0.02));
+            }else{
+                ch.forEach(m=>voice(t,m,b.len,'sine',0.045));
+                voice(t,ch[0]-12,Q*1.8,'sine',0.13);voice(t+Q*2,ch[0]-12,Q*1.5,'sine',0.10);
+                const kv=def.style==='rock'?0.32:0.26;
+                kick(t,kv);kick(t+Q*2,kv*0.85);
+                noise(t+Q,0.14,def.style==='rock'?0.1:0.07,'bandpass',1800);
+                noise(t+Q*3,0.14,def.style==='rock'?0.09:0.06,'bandpass',1800);
+                for(let i=0;i<4;i++)noise(t+Q*0.5*i,0.03,0.028,'highpass',7000);
+            }
+            let c2=t;
+            b.n.forEach(n=>{
+                const d=n[1]*Q;
+                if(def.style==='ballad'){voice(c2,n[0],d,'sine',0.15);voice(c2,n[0]+12,d,'sine',0.04);}
+                else{voice(c2,n[0],d,'triangle',def.style==='rock'?0.18:0.16,def.style==='rock'?2200:1500);}
+                c2+=d;
+            });
             t+=b.len;
         });
-        for(let x=0;x<dur;x+=0.09+Math.random()*0.22)noise(x,0.015,0.010+Math.random()*0.010,'highpass',4000); // crackle vinyle
-        return off.startRendering();
+        if(def.style!=='ballad')for(let x=0;x<dur;x+=0.09+Math.random()*0.22)noise(x,0.015,0.010+Math.random()*0.010,'highpass',4000);
+        // temps de début de chaque mesure (pour synchroniser les paroles)
+        let acc=0;def.barStart=def.bars.map(b=>{const s=acc;acc+=b.len;return s;});
+        def.duration=dur;
+        return off.startRendering().then(buf=>{def.buffer=buf;return def;});
     }
 
-    async function buildBuffer(){
-        try{
-            const r=await fetch(NOEL_CONFIG.fichier);
-            if(r.ok){buffer=await ctx.decodeAudioData(await r.arrayBuffer());return;}
-        }catch(e){}
-        buffer=await renderLofi();   // fallback généré
+    async function buildSongs(){
+        if(NOEL_CONFIG.fichiers&&NOEL_CONFIG.fichiers.length){
+            for(const f of NOEL_CONFIG.fichiers){
+                try{
+                    const r=await fetch(f.url);
+                    if(r.ok){
+                        const buf=await ctx.decodeAudioData(await r.arrayBuffer());
+                        songs.push({titre:f.titre,artiste:f.artiste||'—',buffer:buf,lyrics:(f.paroles||[]).map((l,i)=>[i,l]),unsynced:true,barStart:[],duration:buf.duration});
+                    }
+                }catch(e){}
+            }
+            if(songs.length)return;
+        }
+        for(const def of SONGS_DEF){songs.push(await renderSong(def));}
     }
 
-    function curPos(){return playing?(posBase+(ctx.currentTime-tBase))%buffer.duration:posBase;}
+    const curPos=()=>playing?(posBase+(ctx.currentTime-tBase))%songs[cur].buffer.duration:posBase;
 
-    function startLoop(when,from){
-        loopSrc=ctx.createBufferSource();
-        loopSrc.buffer=buffer;loopSrc.loop=true;
-        loopGain=ctx.createGain();loopGain.gain.setValueAtTime(0.0001,when);
-        loopGain.gain.exponentialRampToValueAtTime(1,when+1.2);
-        loopSrc.connect(loopGain);loopGain.connect(master);
-        loopSrc.start(when,from%buffer.duration);
-        playing=true;posBase=from%buffer.duration;tBase=when;
+    function setMeta(){
+        const s=songs[cur];
+        elT.textContent=s.titre;elA.textContent=s.artiste;
+        pT.textContent=s.titre;pA.textContent=s.artiste;
+        pL.innerHTML='';
+        s.lyrics.forEach((L,i)=>{const p=document.createElement('p');p.textContent=L[1];p.dataset.i=i;pL.appendChild(p);});
+    }
+    function setEtat(on){
+        elE.innerHTML=on?'<i class="fas fa-circle-play"></i> En lecture — clique pour pause'
+                        :'<i class="fas fa-circle-pause"></i> En pause — clique pour réécouter';
+    }
+    function play(i,when,from){
+        if(src){try{src.stop();}catch(e){}src=null;}
+        cur=i;const s=songs[i];setMeta();
+        src=ctx.createBufferSource();src.buffer=s.buffer;src.loop=false;
+        gainN=ctx.createGain();gainN.gain.setValueAtTime(0.0001,when);
+        gainN.gain.exponentialRampToValueAtTime(1,when+0.8);
+        src.connect(gainN);gainN.connect(master);
+        src.start(when,(from||0)%s.buffer.duration);
+        playing=true;posBase=(from||0)%s.buffer.duration;tBase=when;
         setEtat(true);
     }
+    function pause(){if(!playing)return;posBase=curPos();try{src.stop();}catch(e){}src=null;playing=false;setEtat(false);}
+    function resume(){if(playing)return;if(!introDone){scratch();return;}play(cur,ctx.currentTime+0.05,posBase);}
 
-    /* --- Effet scratch / disque qui bugue (avance-recule) --- */
-    function scratchThenPlay(){
+    function scratch(){
+        const buf=songs[0].buffer;
         const seq=[{d:1,t:.5},{d:-1,t:.32},{d:1,t:.42},{d:-1,t:.26},{d:1,t:.6}];
-        let t=ctx.currentTime+0.06, pos=buffer.duration*0.22;
-        master.gain.cancelScheduledValues(t);
-        master.gain.setValueAtTime(NOEL_CONFIG.volume,t);
-        seq.forEach(s=>{
-            const n=ctx.createBufferSource();n.buffer=buffer;n.playbackRate.value=s.d;
+        let t=ctx.currentTime+0.06,pos=buf.duration*0.22;
+        master.gain.cancelScheduledValues(t);master.gain.setValueAtTime(NOEL_CONFIG.volume,t);
+        seq.forEach(s2=>{
+            const n=ctx.createBufferSource();n.buffer=buf;n.playbackRate.value=s2.d;
             const g=ctx.createGain();
-            g.gain.setValueAtTime(0.0001,t);
-            g.gain.exponentialRampToValueAtTime(0.8,t+0.02);
-            g.gain.exponentialRampToValueAtTime(0.0001,t+s.t);
+            g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.8,t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+s2.t);
             n.connect(g);g.connect(master);
-            n.start(t,Math.min(Math.max(pos,0.05),buffer.duration-0.05),s.t);
-            pos=Math.min(Math.max(pos+(s.d>0?s.t:-s.t),0),buffer.duration);
-            t+=s.t+0.05;
+            n.start(t,Math.min(Math.max(pos,0.05),buf.duration-0.05),s2.t);
+            pos=Math.min(Math.max(pos+(s2.d>0?s2.t:-s2.t),0),buf.duration);
+            t+=s2.t+0.05;
         });
         introDone=true;
-        startLoop(t+0.12,pos);
+        play(0,t+0.12,pos);
     }
 
-    function setEtat(on){
-        elEtat.innerHTML=on
-            ? '<i class="fas fa-circle-play"></i> En lecture — clique pour mettre en pause'
-            : '<i class="fas fa-circle-pause"></i> En pause — clique pour réécouter';
-    }
-
-    function pause(){
-        if(!playing)return;
-        posBase=curPos();
-        try{loopSrc.stop();}catch(e){}
-        loopSrc=null;playing=false;setEtat(false);
-    }
-    function resume(){
-        if(playing)return;
-        if(!introDone){scratchThenPlay();return;}
-        startLoop(ctx.currentTime+0.05,posBase);
+    /* suivi : fin de piste + paroles synchronisées */
+    function tick(){
+        if(playing&&songs[cur]){
+            const s=songs[cur],p=curPos();
+            if(p>=s.buffer.duration-0.1){play((cur+1)%songs.length,ctx.currentTime+0.15,0);return;}
+            if(s.unsynced){elL.textContent='';return;}
+            let li=-1;
+            for(let i=0;i<s.lyrics.length;i++){if(p>=s.barStart[s.lyrics[i][0]])li=i;else break;}
+            elL.textContent=li>=0?'\u201C'+s.lyrics[li][1]+'\u201D':'';
+            const items=pL.children;
+            for(let i=0;i<items.length;i++){
+                items[i].classList.toggle('now',i===li);
+                items[i].classList.toggle('past',i<li);
+            }
+            if(li>=0&&items[li]&&document.getElementById('lyricsPanel').classList.contains('open')){
+                items[li].scrollIntoView({block:'nearest',behavior:'smooth'});
+            }
+        }
     }
 
     async function unlock(){
-        if(unlocked)return;
-        unlocked=true;
+        if(unlocked)return;unlocked=true;
         ctx=new (window.AudioContext||window.webkitAudioContext)();
-        master=ctx.createGain();master.gain.value=NOEL_CONFIG.volume;
-        master.connect(ctx.destination);
+        master=ctx.createGain();master.gain.value=NOEL_CONFIG.volume;master.connect(ctx.destination);
         await ctx.resume();
-        await buildBuffer();
-        scratchThenPlay();   // le disque "bugue" 2-3 fois puis joue normalement
+        await buildSongs();
+        scratch();
     }
-
-    wrap.addEventListener('click',()=>{
-        if(!unlocked){unlock();return;}
-        playing?pause():resume();
-    });
+    wrap.addEventListener('click',()=>{if(!unlocked){unlock();return;}playing?pause():resume();});
     wrap.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();wrap.click();}});
-    // Premier geste de l'utilisateur = déblocage du son (règle des navigateurs)
     window.addEventListener('pointerdown',unlock,{once:true});
     window.addEventListener('keydown',unlock,{once:true});
-
-    return {unlock};
+    return {tick};
 })();
+
+/* ===== PANNEAU PAROLES ===== */
+const lyricsBtn=document.getElementById('lyricsBtn'),lyricsPanel=document.getElementById('lyricsPanel'),lyricsClose=document.getElementById('lyricsClose');
+lyricsBtn.addEventListener('click',()=>lyricsPanel.classList.toggle('open'));
+lyricsClose.addEventListener('click',()=>lyricsPanel.classList.remove('open'));
 
 /* ===== PRELOADER ===== */
 (function(){
@@ -865,15 +937,11 @@ const TITLE_TEXT=titleEl.getAttribute('data-text')||'SPOT QUÉBÉCOIS';
     const words=TITLE_TEXT.split(' ');
     let charIndex=0;
     words.forEach((word)=>{
-        const wSpan=document.createElement('span');
-        wSpan.className='word';
+        const wSpan=document.createElement('span');wSpan.className='word';
         word.split('').forEach((ch)=>{
-            const cSpan=document.createElement('span');
-            cSpan.className='char';
-            cSpan.textContent=ch;
+            const cSpan=document.createElement('span');cSpan.className='char';cSpan.textContent=ch;
             cSpan.style.animationDelay=(0.6+charIndex*0.045)+'s, 0s';
-            wSpan.appendChild(cSpan);
-            charIndex++;
+            wSpan.appendChild(cSpan);charIndex++;
         });
         titleEl.appendChild(wSpan);
     });
@@ -884,7 +952,7 @@ const SUB_TEXT='JASER \u2022 JOUER \u2022 CONNECTER \u2022 100% D\'ICI';
 let twI=0;
 function typeWriter(){if(twI<=SUB_TEXT.length){subEl.innerHTML=SUB_TEXT.slice(0,twI)+'<span class="tw-cursor"></span>';twI++;setTimeout(typeWriter,70)}else{subEl.innerHTML=SUB_TEXT}}
 setTimeout(typeWriter,1800);
-/* ===== NEIGE ===== */
+/* ===== NEIGE + suivi audio ===== */
 const canvas=document.getElementById('snowCanvas'),ctx2=canvas.getContext('2d');
 let snowflakes=[];
 function resizeC(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
@@ -892,9 +960,7 @@ resizeC();window.addEventListener('resize',resizeC);
 function initS(){
     snowflakes=[];
     const c=Math.min(120,Math.floor(window.innerWidth/14));
-    for(let i=0;i<c;i++){
-        snowflakes.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*3+.5,vy:Math.random()*.8+.3,vx:(Math.random()-.5)*.3,op:Math.random()*.6+.3,phase:Math.random()*Math.PI*2});
-    }
+    for(let i=0;i<c;i++)snowflakes.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*3+.5,vy:Math.random()*.8+.3,vx:(Math.random()-.5)*.3,op:Math.random()*.6+.3,phase:Math.random()*Math.PI*2});
 }
 initS();
 let tS=0;
@@ -910,6 +976,7 @@ function drawS(){
         ctx2.shadowColor='rgba(255,255,255,.8)';ctx2.shadowBlur=6;
         ctx2.fill();ctx2.shadowBlur=0;
     });
+    Vinyle.tick();
     requestAnimationFrame(drawS);
 }
 drawS();
